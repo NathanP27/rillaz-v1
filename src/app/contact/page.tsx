@@ -29,19 +29,10 @@ export default function ContactPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <a
               href={`tel:${siteConfig.phoneRaw}`}
-              className="flex items-center space-x-2 px-6 py-3 rounded-full border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-white font-extrabold uppercase tracking-wider text-sm transition-all"
+              className="flex items-center space-x-2 px-8 py-3.5 rounded-full border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-white font-extrabold uppercase tracking-wider text-sm transition-all"
             >
               <Phone className="w-4 h-4 text-yellow-400" />
               <span>Call Now: {siteConfig.phone}</span>
-            </a>
-            <a
-              href={siteConfig.socials.whatsapp}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center space-x-2 px-6 py-3 rounded-full border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-white font-extrabold uppercase tracking-wider text-sm transition-all"
-            >
-              <MessageCircle className="w-4 h-4 text-yellow-400" />
-              <span>Message on WhatsApp</span>
             </a>
           </div>
         </div>

@@ -84,7 +84,7 @@ export const ContactFormSection = () => {
             <div className="flex items-start space-x-4 p-4 rounded-xl bg-zinc-900/80 border border-zinc-800">
               <Phone className="w-6 h-6 text-yellow-400 shrink-0 mt-1" />
               <div>
-                <h4 className="font-extrabold text-white uppercase text-sm">Direct Phone & WhatsApp</h4>
+                <h4 className="font-extrabold text-white uppercase text-sm">Direct Phone</h4>
                 <a
                   href={`tel:${siteConfig.phoneRaw}`}
                   className="text-yellow-400 font-bold text-sm hover:underline block mt-1"
