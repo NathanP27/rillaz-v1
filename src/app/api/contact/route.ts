@@ -12,7 +12,23 @@ export async function POST(request: Request) {
       );
     }
 
-    // Conditionally send email via Resend if API key is configured
+    // Try dispatching to FastAPI backend microservice if configured
+    const backendUrl = process.env.FASTAPI_BACKEND_URL || "http://api:8000/api/v1";
+    try {
+      const apiRes = await fetch(`${backendUrl}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, phone, inquiryType, message }),
+      });
+      if (apiRes.ok) {
+        const data = await apiRes.json();
+        return NextResponse.json({ success: true, submissionId: data.id });
+      }
+    } catch {
+      // Fallback to direct Resend email delivery if backend microservice is unreachable
+    }
+
+    // Direct Resend fallback handling
     if (process.env.RESEND_API_KEY && process.env.RESEND_API_KEY !== "re_123456789_placeholder") {
       const { Resend } = await import("resend");
       const resend = new Resend(process.env.RESEND_API_KEY);
@@ -23,7 +39,7 @@ export async function POST(request: Request) {
         subject: `[GYMRILLAZ] New ${inquiryType} Inquiry from ${name}`,
         html: `
           <div style="font-family: Arial, sans-serif; background: #0b0c0e; color: #f8fafc; padding: 32px; border-radius: 12px; max-width: 560px;">
-            <h2 style="color: #eab308; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 24px;">New Gym Inquiry — ${inquiryType}</h2>
+            <h2 style="color: #eab308; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 24px;">New Gym Inquiry - ${inquiryType}</h2>
             <table style="width: 100%; border-collapse: collapse;">
               <tr><td style="padding: 8px 0; color: #a1a1aa; font-size: 12px;">Name:</td><td style="padding: 8px 0; font-weight: bold;">${name}</td></tr>
               <tr><td style="padding: 8px 0; color: #a1a1aa; font-size: 12px;">Email:</td><td style="padding: 8px 0;">${email}</td></tr>
@@ -36,7 +52,6 @@ export async function POST(request: Request) {
       });
     }
 
-    // Log to console in development
     if (process.env.NODE_ENV === "development") {
       console.log("New Gymrillaz Inquiry:", { name, email, phone, inquiryType, message });
     }
