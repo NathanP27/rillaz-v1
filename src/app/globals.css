@@ -22,6 +22,23 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* GPU Layer Promotion & Hardware Acceleration */
+.gpu-accelerated {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Deferred Content Rendering for 60-120fps Smooth Scrolling */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
 }
 
 /* Premium Motion Easing & Hardware-Accelerated Animations */
@@ -62,22 +79,28 @@ body {
 
 .animate-fade-in {
   animation: fade-in 400ms var(--ease-out) forwards;
+  will-change: opacity;
 }
 
 .animate-fade-up {
   animation: fade-up 500ms var(--ease-out) forwards;
+  will-change: transform, opacity;
 }
 
 .animate-marquee {
   animation: marquee var(--duration) linear infinite;
+  will-change: transform;
 }
 
 .animate-marquee-vertical {
   animation: marquee-vertical var(--duration) linear infinite;
+  will-change: transform;
 }
 
 .animate-shimmer-spin {
   animation: shimmer-spin var(--speed) linear infinite;
+  will-change: transform;
+}
 }
 
 .animate-border-beam {
