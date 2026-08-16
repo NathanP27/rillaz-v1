@@ -1,0 +1,155 @@
+import React from "react";
+import Image from "next/image";
+import { BorderBeam } from "@/components/ui/border-beam";
+import { Dumbbell, Zap, Flame, Users, Trophy } from "lucide-react";
+
+type BentoPhotoCardProps = {
+  src: string;
+  alt: string;
+  badge?: string;
+  icon?: React.ReactNode;
+  title: string;
+  description: string;
+  className?: string;
+  objectPosition?: string;
+  children?: React.ReactNode;
+};
+
+const BentoPhotoCard = ({
+  src,
+  alt,
+  badge,
+  icon,
+  title,
+  description,
+  className = "",
+  objectPosition = "center",
+  children,
+}: BentoPhotoCardProps) => (
+  <div
+    className={`relative rounded-2xl overflow-hidden group border border-zinc-800 hover:border-yellow-500/40 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/10 ${className}`}
+  >
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      quality={85}
+      className={`object-cover transition-transform duration-700 ease-out group-hover:scale-105`}
+      style={{ objectPosition }}
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent" />
+    <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/30 via-transparent to-transparent" />
+
+    {badge && (
+      <div className="absolute top-4 right-4 z-20 px-3 py-1 text-[10px] font-black tracking-widest uppercase text-yellow-400 bg-black/70 border border-yellow-500/30 rounded-full backdrop-blur-sm">
+        {badge}
+      </div>
+    )}
+
+    <div className="absolute bottom-0 left-0 right-0 z-10 p-6 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+      {icon && <div className="mb-2 text-yellow-400">{icon}</div>}
+      <div className="font-extrabold text-lg text-white uppercase tracking-wide leading-tight">
+        {title}
+      </div>
+      <div className="mt-1 text-zinc-400 text-xs sm:text-sm leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-20 transition-all duration-500 overflow-hidden">
+        {description}
+      </div>
+    </div>
+
+    {children}
+  </div>
+);
+
+export const VibeBentoSection = () => {
+  return (
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800 relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-yellow-500/5 blur-[150px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto mb-14 text-center space-y-4 relative z-10">
+        <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-yellow-400">
+          THE GYMRILLAZ EXPERIENCE
+        </h2>
+        <p className="text-3xl sm:text-5xl font-black uppercase text-white tracking-tight">
+          BUILT FOR PERFORMANCE. NO EXCUSES.
+        </p>
+        <p className="max-w-2xl mx-auto text-zinc-500 text-sm sm:text-base">
+          From heavy-duty dumbbell racks to precision multi-station cable machines - step inside Paranaque premier strength zone.
+        </p>
+      </div>
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10">
+        <BentoPhotoCard
+          src="/images/gallery/565943734_1240239054791311_8688744286061597014_n.jpg"
+          alt="Gymrillaz reception desk and Gorilla logo"
+          badge="HQ RECEPTION"
+          icon={<Flame className="w-6 h-6 text-yellow-400" />}
+          title="THE GORILLA COMMUNITY DESK"
+          description="High-energy welcome, pre-workout refreshers, supplements, and instant day-pass check-ins. Step into an environment built to fire you up."
+          className="md:col-span-2 min-h-[360px]"
+          objectPosition="center 30%"
+        >
+          <BorderBeam size={300} duration={14} colorFrom="#EAB308" colorTo="#FACC15" />
+        </BentoPhotoCard>
+
+        <BentoPhotoCard
+          src="/images/gallery/565347324_1240239081457975_5465180222937013689_n.jpg"
+          alt="Heavy hex dumbbell rack"
+          badge="FREE WEIGHTS"
+          icon={<Dumbbell className="w-5 h-5 text-yellow-400" />}
+          title="HEAVY DUMBBELL RACK"
+          description="Hex sets up to 120 lbs, multi-angle benches - precision hypertrophy territory."
+          className="md:col-span-1 min-h-[360px]"
+          objectPosition="center"
+        />
+
+        <BentoPhotoCard
+          src="/images/gallery/566221347_1240239151457968_1912780956013468_n.jpg"
+          alt="Incline leg press machine"
+          badge="LEG DAY"
+          icon={<Trophy className="w-5 h-5 text-yellow-400" />}
+          title="INCLINE LEG PRESS"
+          description="Plate-loaded incline leg presses and hack squats - maximum lower body overload."
+          className="md:col-span-1 min-h-[280px]"
+          objectPosition="center"
+        />
+
+        <BentoPhotoCard
+          src="/images/gallery/565701890_1240239291457954_7097484542453069551_n.jpg"
+          alt="Multi-station cable tower"
+          badge="CABLE ZONE"
+          icon={<Zap className="w-5 h-5 text-yellow-400" />}
+          title="MULTI-CABLE TOWER"
+          description="Dual lat pulldowns, cable crossovers, and seated rows for full upper body conditioning."
+          className="md:col-span-2 min-h-[280px]"
+          objectPosition="center 40%"
+        >
+          <BorderBeam size={250} duration={12} delay={9} />
+        </BentoPhotoCard>
+
+        <BentoPhotoCard
+          src="/images/gallery/566253456_1240238881457995_9212084558149844448_n.jpg"
+          alt="Chest press and pec deck machine"
+          badge="CHEST ZONE"
+          icon={<Flame className="w-5 h-5 text-yellow-400" />}
+          title="PEC DECK & CHEST PRESS"
+          description="Machine isolation for chest, shoulders, and tricep development."
+          className="md:col-span-1 min-h-[280px]"
+          objectPosition="center"
+        />
+
+        <BentoPhotoCard
+          src="/images/gallery/569392249_1240239278124622_9046190202363309963_n.jpg"
+          alt="Full gym floor overhead view"
+          badge="COMMUNITY"
+          icon={<Users className="w-5 h-5 text-yellow-400" />}
+          title="THE RILLAZ FLOOR"
+          description="Zero judgment, 100% energy. Train alongside passionate lifters every single day."
+          className="md:col-span-2 min-h-[280px]"
+          objectPosition="center 20%"
+        />
+      </div>
+    </section>
+  );
+};
+
