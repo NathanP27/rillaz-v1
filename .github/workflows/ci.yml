@@ -1,0 +1,71 @@
+name: Gymrillaz CI Pipeline
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  build-and-test:
+    name: Typecheck, Lint & Production Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Typecheck
+        run: npx tsc --noEmit
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Build Next.js Production App
+        run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+
+  lighthouse:
+    name: Core Web Vitals Audit
+    runs-on: ubuntu-latest
+    needs: build-and-test
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build & Run Production Server
+        run: |
+          npm run build
+          npm run start &
+          npx wait-on http://localhost:3000
+
+      - name: Run Lighthouse CI Audit
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            http://localhost:3000/
+            http://localhost:3000/about
+            http://localhost:3000/memberships
+            http://localhost:3000/programs
+            http://localhost:3000/contact
+          uploadCommand: 'echo "Lighthouse audit completed."'
