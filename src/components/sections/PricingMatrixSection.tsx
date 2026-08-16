@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Check, Flame } from "lucide-react";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { BorderBeam } from "@/components/ui/border-beam";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
 
 export const PricingMatrixSection = () => {
   const plans = [
@@ -43,7 +44,7 @@ export const PricingMatrixSection = () => {
 
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
-      <div className="max-w-7xl mx-auto text-center space-y-4 mb-14">
+      <ScrollReveal className="max-w-7xl mx-auto text-center space-y-4 mb-14">
         <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-yellow-400">
           MEMBERSHIPS & RATES
         </h2>
@@ -53,18 +54,18 @@ export const PricingMatrixSection = () => {
         <p className="max-w-xl mx-auto text-zinc-400 text-sm sm:text-base">
           Choose the access plan that matches your training frequency. Pay per visit or lock in full monthly privileges.
         </p>
-      </div>
+      </ScrollReveal>
 
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <StaggerContainer className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {plans.map((plan, idx) => (
-          <div
-            key={idx}
-            className={`relative rounded-2xl p-8 bg-zinc-900/90 border flex flex-col justify-between space-y-6 transition-all duration-300 ${
-              plan.popular
-                ? "border-yellow-500 shadow-2xl shadow-yellow-500/10 md:-translate-y-1"
-                : "border-zinc-800 hover:border-zinc-700"
-            }`}
-          >
+          <StaggerItem key={idx}>
+            <div
+              className={`relative rounded-2xl p-8 bg-zinc-900/90 border flex flex-col justify-between space-y-6 transition-all duration-500 hover:border-yellow-500/50 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-yellow-500/10 ${
+                plan.popular
+                  ? "border-yellow-500 shadow-2xl shadow-yellow-500/10 md:-translate-y-1"
+                  : "border-zinc-800"
+              }`}
+            >
             {plan.popular && (
               <>
                 <BorderBeam size={300} duration={12} colorFrom="#EAB308" colorTo="#FACC15" />
@@ -119,7 +120,7 @@ export const PricingMatrixSection = () => {
                 ) : (
                   <button
                     type="button"
-                    className="w-full py-3.5 rounded-full border border-zinc-700 bg-zinc-800 hover:bg-zinc-700 text-white font-extrabold uppercase tracking-wider text-sm transition-all"
+                    className="w-full py-3.5 rounded-full border border-zinc-700 bg-zinc-800 hover:bg-zinc-700 active:scale-[0.98] text-white font-extrabold uppercase tracking-wider text-sm transition-all duration-200"
                   >
                     {plan.ctaText}
                   </button>
@@ -127,8 +128,9 @@ export const PricingMatrixSection = () => {
               </Link>
             </div>
           </div>
+        </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
     </section>
   );
 };

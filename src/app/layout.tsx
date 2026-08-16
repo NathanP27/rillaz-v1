@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 import { siteConfig } from "@/config/site";
+import { PageTransition } from "@/components/ui/page-transition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -83,10 +84,12 @@ export default function RootLayout({
         <LocalBusinessSchema />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950 text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950 text-white min-h-screen flex flex-col`}
       >
         <Navbar />
-        <main>{children}</main>
+        <main className="flex-1">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
       </body>
     </html>

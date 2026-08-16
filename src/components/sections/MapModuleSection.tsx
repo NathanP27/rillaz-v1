@@ -2,11 +2,12 @@ import React from "react";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { MapPin, Navigation } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 export const MapModuleSection = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
-      <div className="max-w-7xl mx-auto space-y-8">
+      <ScrollReveal className="max-w-7xl mx-auto space-y-8">
         <div className="text-center space-y-3">
           <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-yellow-400">
             LOCATION & ACCESSIBILITY
@@ -77,7 +78,7 @@ export const MapModuleSection = () => {
             </div>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 };
