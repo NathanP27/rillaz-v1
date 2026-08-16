@@ -7,6 +7,8 @@
   --gym-yellow-light: #facc15;
   --gym-charcoal: #0b0c0e;
   --gym-slate: #16181d;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 @theme inline {
@@ -22,7 +24,7 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-/* Magic UI Animations */
+/* Premium Motion Easing & Hardware-Accelerated Animations */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-100% - var(--gap))); }
@@ -42,7 +44,6 @@ body {
   100% { offset-distance: 100%; }
 }
 
-/* Premium Animations & Transitions */
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -51,20 +52,20 @@ body {
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(16px) scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
 .animate-fade-in {
-  animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fade-in 400ms var(--ease-out) forwards;
 }
 
 .animate-fade-up {
-  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fade-up 500ms var(--ease-out) forwards;
 }
 
 .animate-marquee {
@@ -81,4 +82,14 @@ body {
 
 .animate-border-beam {
   animation: border-beam calc(var(--duration) * 1s) infinite linear;
+}
+
+/* Touch device hover protection */
+@media (hover: hover) and (pointer: fine) {
+  .hover-scale {
+    transition: transform 200ms var(--ease-out);
+  }
+  .hover-scale:hover {
+    transform: translateY(-2px);
+  }
 }

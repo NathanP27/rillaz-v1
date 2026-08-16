@@ -20,27 +20,27 @@ export function ScrollReveal({
   const getInitialPosition = () => {
     switch (direction) {
       case "up":
-        return { y: 24, opacity: 0 };
+        return { y: 16, scale: 0.97, opacity: 0 };
       case "down":
-        return { y: -24, opacity: 0 };
+        return { y: -16, scale: 0.97, opacity: 0 };
       case "left":
-        return { x: -24, opacity: 0 };
+        return { x: -16, scale: 0.97, opacity: 0 };
       case "right":
-        return { x: 24, opacity: 0 };
+        return { x: 16, scale: 0.97, opacity: 0 };
       case "none":
-        return { opacity: 0 };
+        return { opacity: 0, scale: 0.97 };
       default:
-        return { y: 24, opacity: 0 };
+        return { y: 16, scale: 0.97, opacity: 0 };
     }
   };
 
   return (
     <motion.div
       initial={getInitialPosition()}
-      whileInView={{ x: 0, y: 0, opacity: 1 }}
+      whileInView={{ x: 0, y: 0, scale: 1, opacity: 1 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{
-        duration: 0.6,
+        duration: 0.45,
         delay: delay,
         ease: [0.16, 1, 0.3, 1],
       }}
@@ -90,8 +90,8 @@ export function StaggerItem({
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 20 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
+        hidden: { opacity: 0, y: 16, scale: 0.97 },
+        show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] } },
       }}
       className={className}
     >
