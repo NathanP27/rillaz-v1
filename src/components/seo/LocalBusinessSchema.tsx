@@ -5,7 +5,11 @@ export const LocalBusinessSchema = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ExerciseGym",
+    "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
+    url: siteConfig.url,
+    image: `${siteConfig.url}/images/gallery/565123458_1240238891457994_3695900658646377638_n.jpg`,
+    logo: `${siteConfig.url}/images/gallery/LOGO.jpg`,
     description: siteConfig.description,
     telephone: siteConfig.phone,
     email: siteConfig.email,
@@ -16,6 +20,11 @@ export const LocalBusinessSchema = () => {
       addressRegion: siteConfig.address.region,
       postalCode: siteConfig.address.postalCode,
       addressCountry: "PH",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 14.475853,
+      longitude: 121.015215,
     },
     openingHoursSpecification: [
       {
@@ -33,7 +42,8 @@ export const LocalBusinessSchema = () => {
         closes: "21:00",
       },
     ],
-    priceRange: "$$",
+    priceRange: "₱120 - ₱1,200",
+    sameAs: [siteConfig.socials.facebook, siteConfig.socials.instagram],
   };
 
   return (

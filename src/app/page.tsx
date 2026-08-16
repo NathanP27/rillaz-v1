@@ -10,9 +10,18 @@ import { Phone } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "GYMRILLAZ | Paranaque High-Intensity Community Gym",
+  title: "GYMRILLAZ | Parañaque High-Intensity Community Gym",
   description:
-    "Gymrillaz - Paranaque premier gym for heavy lifting, bodybuilding, and functional fitness. Open 8 AM - 9 PM daily. Claim your free day pass today.",
+    "Gymrillaz — Parañaque's premier gym for heavy lifting, bodybuilding, and functional fitness. Open 8 AM – 9 PM daily at 91 Saudi Arabia St. Claim your free day pass today.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "GYMRILLAZ | Parañaque High-Intensity Community Gym",
+    description:
+      "Parañaque's premier gym for heavy lifting, bodybuilding, and functional fitness. Open 8 AM – 9 PM daily.",
+    url: "/",
+  },
 };
 
 export default function HomePage() {

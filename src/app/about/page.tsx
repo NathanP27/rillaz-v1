@@ -5,9 +5,18 @@ import Link from "next/link";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 
 export const metadata: Metadata = {
-  title: "About & The Vibe",
+  title: "About",
   description:
     "Learn the origin, mission, and culture behind Gymrillaz — Parañaque's elite strength and conditioning gym.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About | GYMRILLAZ Parañaque",
+    description:
+      "Learn the origin, mission, and culture behind Gymrillaz — Parañaque's elite strength and conditioning gym.",
+    url: "/about",
+  },
 };
 
 // Photo assignments for facility showcase:
@@ -83,7 +92,7 @@ export default function AboutPage() {
             BUILT FOR THOSE WHO TAKE IT SERIOUSLY.
           </h1>
           <p className="max-w-2xl text-zinc-400 text-base sm:text-xl leading-relaxed">
-            Gymrillaz was forged from the belief that every serious lifter in Parañaque deserves access to a real training environment — heavy equipment, no-nonsense coaching, and a community that pushes you harder than you push yourself.
+            Gymrillaz was created to provide lifters in Parañaque with a dedicated training facility featuring heavy equipment, structured coaching, and an encouraging community environment.
           </p>
           <div className="pt-4">
             <Link href="/contact">
@@ -111,17 +120,17 @@ export default function AboutPage() {
               {
                 icon: <Dumbbell className="w-8 h-8 text-yellow-400" />,
                 title: "IRON DISCIPLINE",
-                body: "We operate on a culture of discipline first — no shortcuts, no fluff. Just progressive, evidence-backed training.",
+                body: "We operate on a culture of consistent progress, focused workouts, and evidence-backed training.",
               },
               {
                 icon: <Users className="w-8 h-8 text-yellow-400" />,
-                title: "BROTHERHOOD",
-                body: "Gymrillaz is built around community. Every lifter who walks through is part of the family.",
+                title: "COMMUNITY FIRST",
+                body: "Gymrillaz is built around community support, welcoming every lifter who steps onto the gym floor.",
               },
               {
                 icon: <Star className="w-8 h-8 text-yellow-400" />,
-                title: "EXCELLENCE OVER EGO",
-                body: "We focus on form, consistency, and sustainable progress — not how much you can load on the bar on day one.",
+                title: "TECHNIQUE & QUALITY",
+                body: "We prioritize proper form, consistency, and long-term athletic health over short-term ego lifting.",
               },
             ].map((value, idx) => (
               <div

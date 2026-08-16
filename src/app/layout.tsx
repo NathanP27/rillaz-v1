@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
+import { siteConfig } from "@/config/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,6 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: "GYMRILLAZ | Parañaque's High-Intensity Community Gym",
     template: "%s | GYMRILLAZ",
@@ -31,6 +33,38 @@ export const metadata: Metadata = {
     "day pass gym Manila",
     "personal trainer Paranaque",
   ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_PH",
+    url: siteConfig.url,
+    title: "GYMRILLAZ | Unleash Your Inner Beast",
+    description:
+      "Parañaque's premier community gym built for heavy lifting, athletic conditioning, bodybuilding, and functional fitness.",
+    siteName: "GYMRILLAZ",
+    images: [
+      {
+        url: "/images/gallery/565123458_1240238891457994_3695900658646377638_n.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Gymrillaz Parañaque Gym Floor",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GYMRILLAZ | Parañaque's High-Intensity Community Gym",
+    description:
+      "Parañaque's premier community gym built for heavy lifting, athletic conditioning, bodybuilding, and functional fitness.",
+    images: ["/images/gallery/565123458_1240238891457994_3695900658646377638_n.jpg"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

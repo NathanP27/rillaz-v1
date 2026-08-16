@@ -71,10 +71,10 @@ export const VibeBentoSection = () => {
           THE GYMRILLAZ EXPERIENCE
         </h2>
         <p className="text-3xl sm:text-5xl font-black uppercase text-white tracking-tight">
-          BUILT FOR PERFORMANCE. NO EXCUSES.
+          BUILT FOR PERFORMANCE
         </p>
-        <p className="max-w-2xl mx-auto text-zinc-500 text-sm sm:text-base">
-          From heavy-duty dumbbell racks to precision multi-station cable machines - step inside Paranaque premier strength zone.
+        <p className="max-w-2xl mx-auto text-zinc-400 text-sm sm:text-base">
+          From heavy dumbbell racks to precision multi-station cable towers, step inside Parañaque's dedicated strength facility.
         </p>
       </div>
 

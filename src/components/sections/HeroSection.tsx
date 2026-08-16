@@ -57,7 +57,7 @@ export const HeroSection = () => {
           className="max-w-2xl mx-auto text-zinc-300 text-base sm:text-xl font-normal leading-relaxed animate-fade-up"
           style={{ animationDelay: "0.35s" }}
         >
-          No gimmicks. Heavy iron, specialized bodybuilding rigs, functional conditioning, and a relentless brotherhood of lifters in the heart of Parañaque.
+          Heavy iron, specialized bodybuilding equipment, functional conditioning, and a dedicated lifting community in Parañaque.
         </p>
 
         {/* CTA Buttons */}

@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Find Gymrillaz at 91 Saudi Arabia St, Parañaque, 1700 Metro Manila. Open 8 AM – 9 PM daily. Claim your free day pass or inquire about memberships.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact | GYMRILLAZ Parañaque",
+    description:
+      "Find Gymrillaz at 91 Saudi Arabia St, Parañaque, 1700 Metro Manila. Open 8 AM – 9 PM daily. Claim your free day pass or inquire about memberships.",
+    url: "/contact",
+  },
 };
 
 export default function ContactPage() {

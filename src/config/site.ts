@@ -1,5 +1,6 @@
 export interface SiteConfig {
   name: string;
+  url: string;
   tagline: string;
   description: string;
   phone: string;
@@ -21,15 +22,15 @@ export interface SiteConfig {
   socials: {
     facebook: string;
     instagram: string;
-    whatsapp: string;
   };
 }
 
 export const siteConfig: SiteConfig = {
   name: "GYMRILLAZ",
+  url: "https://gymrillaz.com",
   tagline: "UNLEASH YOUR INNER BEAST",
   description:
-    "Parañaque's premier community gym built for heavy lifting, athletic conditioning, body building, and no-nonsense functional fitness.",
+    "Parañaque's community strength gym built for heavy lifting, athletic conditioning, bodybuilding, and functional fitness.",
   phone: "+63 960 030 8917",
   phoneRaw: "+639600308917",
   email: "info@gymrillaz.com",
@@ -49,7 +50,6 @@ export const siteConfig: SiteConfig = {
   socials: {
     facebook: "https://facebook.com",
     instagram: "https://instagram.com",
-    whatsapp: "https://wa.me/639600308917",
   },
 };
 
@@ -62,8 +62,8 @@ export const navigation = [
 ];
 
 export const gymStats = [
-  { label: "Heavy Dumbbells (lbs)", value: 60, prefix: "Up to ", suffix: " lbs" },
-  { label: "Active Rillaz Community", value: 200, prefix: "", suffix: "+" },
-  { label: "Workouts Supported", value: 100, prefix: "", suffix: "% Hardcore" },
-  { label: "Daily Access Hours", value: 13, prefix: "", suffix: " hrs/day" },
+  { label: "Heavy Dumbbells", value: 60, prefix: "Up to ", suffix: " lbs" },
+  { label: "Active Members", value: 200, prefix: "", suffix: "+" },
+  { label: "Days Open Weekly", value: 7, prefix: "", suffix: " Days" },
+  { label: "Daily Access Hours", value: 13, prefix: "", suffix: " Hours" },
 ];

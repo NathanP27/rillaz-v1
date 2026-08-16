@@ -5,9 +5,18 @@ import Link from "next/link";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 
 export const metadata: Metadata = {
-  title: "Memberships & Day Passes",
+  title: "Memberships",
   description:
-    "Explore Gymrillaz membership plans, monthly rates, student discounts, and walk-in day pass options. Transparent pricing, zero hidden fees.",
+    "Explore Gymrillaz membership plans, monthly rates (₱1,200/mo), and walk-in day pass options (₱120/visit). Transparent pricing, zero hidden fees.",
+  alternates: {
+    canonical: "/memberships",
+  },
+  openGraph: {
+    title: "Memberships | GYMRILLAZ Parañaque",
+    description:
+      "Explore Gymrillaz membership plans, monthly rates (₱1,200/mo), and walk-in day pass options (₱120/visit). Transparent pricing, zero hidden fees.",
+    url: "/memberships",
+  },
 };
 
 const faqs = [
@@ -43,7 +52,7 @@ export default function MembershipsPage() {
             MEMBERSHIPS & RATES
           </h1>
           <p className="text-zinc-400 text-base sm:text-xl max-w-2xl mx-auto leading-relaxed">
-            Whether you're a first-timer or a daily lifter, we have a transparent, fair plan for you — no hidden fees, no pressure.
+            Choose between flexible walk-in day passes or full monthly membership access with zero hidden fees.
           </p>
         </div>
       </section>

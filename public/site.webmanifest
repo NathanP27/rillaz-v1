@@ -1,0 +1,20 @@
+{
+  "name": "GYMRILLAZ Parañaque",
+  "short_name": "GYMRILLAZ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0c0e",
+  "theme_color": "#eab308",
+  "icons": [
+    {
+      "src": "/images/gallery/LOGO.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/images/gallery/LOGO.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

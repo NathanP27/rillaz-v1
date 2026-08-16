@@ -6,9 +6,18 @@ import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Programs & Training",
+  title: "Programs",
   description:
-    "Explore strength training, bodybuilding, and personal coaching programs at Gymrillaz, Parañaque. Discover what your first session looks like.",
+    "Explore strength training, bodybuilding, and personal coaching programs at Gymrillaz, Parañaque.",
+  alternates: {
+    canonical: "/programs",
+  },
+  openGraph: {
+    title: "Programs | GYMRILLAZ Parañaque",
+    description:
+      "Explore strength training, bodybuilding, and personal coaching programs at Gymrillaz, Parañaque.",
+    url: "/programs",
+  },
 };
 
 const programs = [
@@ -54,7 +63,7 @@ const programs = [
       "Real-time form correction & coaching",
       "Monthly progress tracking sessions",
     ],
-    suitable: "All Levels — First-timers Welcome",
+    suitable: "All Levels - Beginners Welcome",
     photo: "/images/gallery/569804635_1240238924791324_1100823839523853702_n.jpg",
   },
 ];
@@ -68,7 +77,7 @@ const firstDaySchedule = [
   {
     step: "02",
     time: "Quick Orientation",
-    description: "A coach will briefly walk you through the facility zones — free weights, cable stations, machines, and bathroom facilities.",
+    description: "A coach will briefly walk you through the facility zones including free weights, cable stations, and locker rooms.",
   },
   {
     step: "03",
@@ -215,7 +224,7 @@ export default function ProgramsPage() {
             <Clock className="w-6 h-6 text-yellow-400" />
             <div className="text-left">
               <div className="font-black text-xl uppercase">{siteConfig.hours.display}</div>
-              <div className="text-sm text-zinc-400 font-medium">Monday through Sunday — All Year Round</div>
+              <div className="text-sm text-zinc-400 font-medium">Monday through Sunday, All Year Round</div>
             </div>
           </div>
           <div className="pt-4 flex justify-center">

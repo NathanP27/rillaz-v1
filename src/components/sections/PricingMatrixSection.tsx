@@ -34,7 +34,7 @@ export const PricingMatrixSection = () => {
         "Full Access to All Dumbbells & Racks",
         "Multi-Cable Rigs & Plate Loaded Machines",
         "Locker & Shower Facility Access",
-        "No Lock-In Contract - Cancel Anytime",
+        "No Lock-In Contract",
       ],
       popular: true,
       ctaText: "Join Monthly",
