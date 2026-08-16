@@ -65,6 +65,13 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
+  other: {
+    "geo.region": "PH-00",
+    "geo.placename": "Parañaque, Metro Manila, Philippines",
+    "geo.position": "14.475853;121.015215",
+    "ICBM": "14.475853, 121.015215",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  },
 };
 
 export default function RootLayout({
