@@ -23,7 +23,7 @@ const facilities = [
   {
     name: "Free Weight Zone",
     description:
-      "Hex dumbbell sets from 5 lbs to 120 lbs, EZ bars, curl bars, and a full selection of flat/incline/decline benches.",
+      "Hex dumbbell sets from 5 lbs to 60 lbs, EZ bars, curl bars, and a full selection of flat/incline/decline benches.",
     icon: <Dumbbell className="w-6 h-6 text-yellow-400" />,
     badge: "Heavy Iron",
     photo: "/images/gallery/565347324_1240239081457975_5465180222937013689_n.jpg",

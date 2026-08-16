@@ -84,7 +84,7 @@ export const HeroSection = () => {
           style={{ animationDelay: "0.65s" }}
         >
           {[
-            { icon: <Dumbbell className="w-4 h-4 text-yellow-400 shrink-0" />, text: "Dumbbells Up to 120 lbs" },
+            { icon: <Dumbbell className="w-4 h-4 text-yellow-400 shrink-0" />, text: "Dumbbells Up to 60 lbs" },
             { icon: <ShieldCheck className="w-4 h-4 text-yellow-400 shrink-0" />, text: "No Lock-In Contracts" },
             { icon: <MapPin className="w-4 h-4 text-yellow-400 shrink-0" />, text: siteConfig.hours.display },
           ].map((item, i) => (

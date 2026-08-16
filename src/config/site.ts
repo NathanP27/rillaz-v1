@@ -62,8 +62,8 @@ export const navigation = [
 ];
 
 export const gymStats = [
-  { label: "Heavy Dumbbells (lbs)", value: 120, prefix: "Up to ", suffix: " lbs" },
-  { label: "Active Rillaz Community", value: 350, prefix: "", suffix: "+" },
+  { label: "Heavy Dumbbells (lbs)", value: 60, prefix: "Up to ", suffix: " lbs" },
+  { label: "Active Rillaz Community", value: 200, prefix: "", suffix: "+" },
   { label: "Workouts Supported", value: 100, prefix: "", suffix: "% Hardcore" },
   { label: "Daily Access Hours", value: 13, prefix: "", suffix: " hrs/day" },
 ];

@@ -11,12 +11,12 @@ export const PricingMatrixSection = () => {
     {
       name: "Walk-In Day Pass",
       badge: "Pay Per Visit",
-      price: "PHP 150",
+      price: "PHP 120",
       period: "per visit",
       description: "Ideal for travelers, guests, or lifters testing out the Gymrillaz vibe.",
       features: [
         "Full Open Gym Access (8 AM - 9 PM)",
-        "Free Weights & Dumbbells up to 120 lbs",
+        "Free Weights & Dumbbells up to 60 lbs",
         "Multi-Cable Rig & Leg Press Zone",
         "Locker & Refreshment Area Access",
       ],

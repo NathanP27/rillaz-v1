@@ -98,7 +98,7 @@ export const VibeBentoSection = () => {
           badge="FREE WEIGHTS"
           icon={<Dumbbell className="w-5 h-5 text-yellow-400" />}
           title="HEAVY DUMBBELL RACK"
-          description="Hex sets up to 120 lbs, multi-angle benches - precision hypertrophy territory."
+          description="Hex sets up to 60 lbs, multi-angle benches - precision hypertrophy territory."
           className="md:col-span-1 min-h-[360px]"
           objectPosition="center"
         />
