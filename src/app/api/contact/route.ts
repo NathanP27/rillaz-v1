@@ -66,7 +66,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const backendUrl = process.env.FASTAPI_BACKEND_URL || "http://api:8000/api/v1";
+    const backendUrl = process.env.FASTAPI_BACKEND_URL || "http://127.0.0.1:8000/api/v1";
     try {
       const apiRes = await fetch(`${backendUrl}/contact`, {
         method: "POST",
