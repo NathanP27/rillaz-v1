@@ -101,7 +101,6 @@ section {
   animation: shimmer-spin var(--speed) linear infinite;
   will-change: transform;
 }
-}
 
 .animate-border-beam {
   animation: border-beam calc(var(--duration) * 1s) infinite linear;
