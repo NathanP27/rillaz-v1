@@ -173,13 +173,13 @@ export default function ProgramsPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-3 mb-16">
             <h2 className="text-xs font-extrabold uppercase tracking-widest text-yellow-400">
-              NEW MEMBER GUIDE
+              COACHING SESSION GUIDE
             </h2>
             <p className="text-3xl sm:text-4xl font-black uppercase text-white">
-              YOUR FIRST DAY BREAKDOWN
+              YOUR FIRST COACHING DAY BREAKDOWN
             </p>
             <p className="text-zinc-400 text-sm max-w-lg mx-auto">
-              Not sure what to expect? Here's a simple walkthrough of what your first session at Gymrillaz looks like.
+              What to expect during your initial session when you inquire and sign up for 1-on-1 Personal Coaching.
             </p>
           </div>
           <div className="relative space-y-6">
@@ -218,9 +218,9 @@ export default function ProgramsPage() {
               <div className="text-sm text-zinc-400 font-medium">Monday through Sunday — All Year Round</div>
             </div>
           </div>
-          <div className="pt-4">
-            <Link href="/contact">
-              <ShimmerButton className="py-3.5 px-10">
+          <div className="pt-4 flex justify-center">
+            <Link href="/contact" className="inline-block">
+              <ShimmerButton className="py-3.5 px-10 text-sm">
                 Reserve Your Free Trial
               </ShimmerButton>
             </Link>
