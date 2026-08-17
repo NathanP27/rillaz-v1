@@ -30,10 +30,10 @@ export const HeroSection = () => {
       {/* Grid texture overlay */}
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#27272a08_1px,transparent_1px),linear-gradient(to_bottom,#27272a08_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-28 text-center space-y-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-24 lg:py-28 text-center space-y-5 sm:space-y-8">
         {/* Badge */}
         <div
-          className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-zinc-950/90 border border-yellow-500/40 text-yellow-400 text-fluid-meta backdrop-blur-xl shadow-2xl shadow-yellow-500/10 animate-fade-in"
+          className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-full bg-zinc-950/90 border border-yellow-500/40 text-yellow-400 text-fluid-meta backdrop-blur-xl shadow-2xl shadow-yellow-500/10 animate-fade-in min-h-[36px]"
           style={{ animationDelay: "0.1s" }}
         >
           <Flame className="w-4 h-4 text-yellow-400 animate-pulse shrink-0" />
@@ -42,7 +42,7 @@ export const HeroSection = () => {
 
         {/* Headline */}
         <h1
-          className="text-fluid-h1 font-black uppercase text-white animate-fade-up"
+          className="text-fluid-h1 font-black uppercase text-white animate-fade-up tracking-tighter"
           style={{ animationDelay: "0.2s" }}
         >
           UNLEASH YOUR{" "}
@@ -62,17 +62,17 @@ export const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 animate-fade-up"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2 animate-fade-up"
           style={{ animationDelay: "0.5s" }}
         >
-          <Link href="/contact">
-            <ShimmerButton className="w-full sm:w-auto text-sm sm:text-base py-4 px-10">
+          <Link href="/contact" className="w-full sm:w-auto">
+            <ShimmerButton className="w-full sm:w-auto text-sm sm:text-base min-h-[48px] py-3.5 px-8 font-black">
               Claim Free Day Pass
             </ShimmerButton>
           </Link>
           <Link
             href="/memberships"
-            className="w-full sm:w-auto px-10 py-4 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 text-white font-extrabold uppercase tracking-wider text-sm sm:text-base transition-all duration-300 hover:border-white/40 text-center backdrop-blur-sm"
+            className="w-full sm:w-auto min-h-[48px] px-8 py-3.5 rounded-full border border-zinc-700 bg-zinc-900/90 hover:bg-zinc-800 text-white font-extrabold uppercase tracking-wider text-sm sm:text-base transition-all duration-300 hover:border-zinc-500 text-center backdrop-blur-md flex items-center justify-center active:scale-[0.97]"
           >
             Explore Memberships
           </Link>

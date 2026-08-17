@@ -76,12 +76,12 @@ export const Navbar = () => {
           </Tooltip>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button (Verified 48px x 48px target) */}
         <div className="flex md:hidden items-center">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-xl border border-zinc-800 bg-zinc-900/80 text-zinc-300 hover:text-white hover:border-yellow-500/30 focus:outline-none transition-all duration-200"
+            className="p-3 min-h-[48px] min-w-[48px] rounded-xl border border-zinc-800 bg-zinc-900/80 text-zinc-300 hover:text-white hover:border-yellow-500/30 focus:outline-none transition-all duration-200 flex items-center justify-center active:scale-[0.97]"
             aria-label="Toggle Navigation Menu"
           >
             <span className={`block transition-transform duration-300 ${mobileMenuOpen ? "rotate-90" : "rotate-0"}`}>
@@ -91,7 +91,7 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu (Verified 48px item touch targets) */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           mobileMenuOpen ? "max-h-[500px] opacity-100 border-b border-zinc-800" : "max-h-0 opacity-0"
@@ -105,7 +105,7 @@ export const Navbar = () => {
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-3 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-200 ${
+                className={`block px-4 py-3.5 min-h-[48px] rounded-xl text-base font-black uppercase tracking-wider transition-all duration-200 flex items-center ${
                   isActive
                     ? "text-yellow-400 bg-yellow-500/10 border border-yellow-500/20"
                     : "text-zinc-300 hover:text-white hover:bg-zinc-900/80"
@@ -121,7 +121,7 @@ export const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full"
             >
-              <ShimmerButton className="w-full text-xs py-3.5 font-black">
+              <ShimmerButton className="w-full text-xs min-h-[48px] py-3.5 font-black">
                 Claim Free Trial Pass
               </ShimmerButton>
             </Link>
