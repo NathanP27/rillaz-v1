@@ -33,16 +33,16 @@ export const HeroSection = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-28 text-center space-y-8">
         {/* Badge */}
         <div
-          className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-black/60 border border-yellow-500/40 text-yellow-400 text-xs sm:text-sm font-extrabold uppercase tracking-wider backdrop-blur-xl shadow-2xl shadow-yellow-500/10 animate-fade-in"
+          className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-zinc-950/90 border border-yellow-500/40 text-yellow-400 text-fluid-meta backdrop-blur-xl shadow-2xl shadow-yellow-500/10 animate-fade-in"
           style={{ animationDelay: "0.1s" }}
         >
-          <Flame className="w-4 h-4 text-yellow-400 animate-pulse" />
+          <Flame className="w-4 h-4 text-yellow-400 animate-pulse shrink-0" />
           <span>PARAÑAQUE'S MOST INTENSE COMMUNITY GYM</span>
         </div>
 
         {/* Headline */}
         <h1
-          className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter uppercase text-white leading-[0.9] animate-fade-up"
+          className="text-fluid-h1 font-black uppercase text-white animate-fade-up"
           style={{ animationDelay: "0.2s" }}
         >
           UNLEASH YOUR{" "}
@@ -52,9 +52,9 @@ export const HeroSection = () => {
           </span>
         </h1>
 
-        {/* Subtitle */}
+        {/* Subtitle with max-w-prose Line Architecture */}
         <p
-          className="max-w-2xl mx-auto text-zinc-300 text-base sm:text-xl font-normal leading-relaxed animate-fade-up"
+          className="max-w-prose mx-auto text-zinc-200 text-fluid-body font-normal leading-relaxed animate-fade-up"
           style={{ animationDelay: "0.35s" }}
         >
           Heavy iron, specialized bodybuilding equipment, functional conditioning, and a dedicated lifting community in Parañaque.

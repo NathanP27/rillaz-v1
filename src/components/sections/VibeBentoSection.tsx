@@ -29,37 +29,41 @@ const BentoPhotoCard = ({
   children,
 }: BentoPhotoCardProps) => (
   <div
-    className={`relative rounded-2xl overflow-hidden group border border-zinc-800 hover:border-yellow-500/40 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/10 ${className}`}
+    className={`relative rounded-2xl overflow-hidden group border border-zinc-800 hover:border-yellow-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/10 ${className}`}
   >
+    {/* Real photo background */}
     <Image
       src={src}
       alt={alt}
       fill
       quality={85}
       loading="lazy"
-      className={`object-cover transition-transform duration-700 ease-out group-hover:scale-105`}
+      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
       style={{ objectPosition }}
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     />
-    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent" />
-    <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/30 via-transparent to-transparent" />
+    {/* Enhanced Multi-stop Contrast Scrim */}
+    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-zinc-950/20" />
+    <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/40 via-transparent to-transparent" />
 
+    {/* Badge (min 13px font size) */}
     {badge && (
       <Tooltip content={`Facility Zone: ${badge}`} side="left">
-        <div className="absolute top-4 right-4 z-20 px-3 py-1 text-[10px] font-black tracking-widest uppercase text-yellow-400 bg-black/70 border border-yellow-500/30 rounded-full backdrop-blur-sm">
+        <div className="absolute top-4 right-4 z-20 px-3.5 py-1.5 text-fluid-meta text-yellow-400 bg-zinc-950/90 border border-yellow-500/40 rounded-full backdrop-blur-md">
           {badge}
         </div>
       </Tooltip>
     )}
 
+    {/* Content with high contrast text */}
     <div className="absolute bottom-0 left-0 right-0 z-10 p-6 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
       {icon && <div className="mb-2 text-yellow-400">{icon}</div>}
-      <div className="font-extrabold text-lg text-white uppercase tracking-wide leading-tight">
+      <h3 className="font-extrabold text-fluid-h3 text-white uppercase tracking-wide leading-tight">
         {title}
-      </div>
-      <div className="mt-1 text-zinc-400 text-xs sm:text-sm leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-20 transition-all duration-500 overflow-hidden">
+      </h3>
+      <p className="mt-1 text-zinc-300 text-fluid-body leading-relaxed max-w-prose opacity-90 group-hover:opacity-100 transition-opacity duration-300">
         {description}
-      </div>
+      </p>
     </div>
 
     {children}
