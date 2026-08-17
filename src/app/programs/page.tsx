@@ -130,6 +130,7 @@ export default function ProgramsPage() {
                   alt={program.name}
                   fill
                   quality={85}
+                  loading="lazy"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />

@@ -1,13 +1,27 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { GymStatsSection } from "@/components/sections/GymStatsSection";
-import { VibeBentoSection } from "@/components/sections/VibeBentoSection";
-import { ReviewsMarqueeSection } from "@/components/sections/ReviewsMarqueeSection";
-import { PricingMatrixSection } from "@/components/sections/PricingMatrixSection";
 import Link from "next/link";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { Phone } from "lucide-react";
 import { siteConfig } from "@/config/site";
+
+// Lazy-loaded below-the-fold sections for maximum initial page load speed
+const VibeBentoSection = dynamic(
+  () => import("@/components/sections/VibeBentoSection").then((m) => m.VibeBentoSection),
+  { loading: () => <div className="py-24 bg-zinc-950 min-h-[400px]" /> }
+);
+
+const ReviewsMarqueeSection = dynamic(
+  () => import("@/components/sections/ReviewsMarqueeSection").then((m) => m.ReviewsMarqueeSection),
+  { loading: () => <div className="py-20 bg-zinc-950 min-h-[200px]" /> }
+);
+
+const PricingMatrixSection = dynamic(
+  () => import("@/components/sections/PricingMatrixSection").then((m) => m.PricingMatrixSection),
+  { loading: () => <div className="py-24 bg-zinc-950 min-h-[400px]" /> }
+);
 
 export const metadata: Metadata = {
   title: "GYMRILLAZ | Parañaque High-Intensity Community Gym",

@@ -169,6 +169,7 @@ export default function AboutPage() {
                 alt={facility.name}
                 fill
                 quality={80}
+                loading="lazy"
                 className="object-cover transition-transform duration-700 group-hover:scale-108"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               />

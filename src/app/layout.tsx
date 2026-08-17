@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 import { siteConfig } from "@/config/site";
 import { PageTransition } from "@/components/ui/page-transition";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -91,6 +92,7 @@ export default function RootLayout({
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
