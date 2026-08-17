@@ -88,7 +88,7 @@ export default function RootLayout({
         <LocalBusinessSchema />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950 text-white min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#09090b] text-white min-h-screen flex flex-col`}
       >
         <a
           href="#main-content"

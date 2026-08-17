@@ -7,7 +7,7 @@ import { siteConfig } from "@/config/site";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-zinc-950">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#09090b]">
       {/* Real gym floor background image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -20,8 +20,8 @@ export const HeroSection = () => {
           sizes="100vw"
         />
         {/* Multi-layer dark overlay for legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/50" />
-        <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/80 via-transparent to-zinc-950/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/82 to-[#09090b]/45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#09090b]/75 via-transparent to-[#09090b]/55" />
       </div>
 
       {/* Radial glow accent */}
@@ -33,7 +33,7 @@ export const HeroSection = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36 text-center space-y-6 sm:space-y-8">
         {/* Badge */}
         <div
-          className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-zinc-950/90 border border-yellow-500/40 text-yellow-400 text-xs sm:text-sm font-extrabold uppercase tracking-wider backdrop-blur-xl shadow-2xl shadow-yellow-500/10 animate-fade-in"
+          className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-[#09090b]/90 border border-yellow-500/30 text-yellow-400 text-xs sm:text-sm font-extrabold uppercase tracking-wider backdrop-blur-xl shadow-[0_0_0_1px_rgba(234,179,8,0.1),0_4px_24px_rgba(0,0,0,0.5)] animate-fade-in"
           style={{ animationDelay: "0.1s" }}
         >
           <Flame className="w-4 h-4 text-yellow-400 animate-pulse shrink-0" />
@@ -90,7 +90,7 @@ export const HeroSection = () => {
           ].map((item, i) => (
             <div
               key={i}
-              className={`flex items-center justify-center space-x-2 bg-black/40 backdrop-blur-sm p-3 rounded-xl border border-white/10 hover:border-yellow-500/30 transition-all duration-300 ${i === 2 ? "col-span-2 md:col-span-1" : ""}`}
+              className={`flex items-center justify-center space-x-2 bg-[#09090b]/60 backdrop-blur-sm p-3 rounded-xl border border-white/[0.08] hover:border-yellow-500/25 hover:shadow-[0_4px_20px_rgba(234,179,8,0.06)] transition-all duration-300 ${i === 2 ? "col-span-2 md:col-span-1" : ""}`}
             >
               {item.icon}
               <span className="text-xs sm:text-sm font-bold text-zinc-200">{item.text}</span>
@@ -100,7 +100,7 @@ export const HeroSection = () => {
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-zinc-950 to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#09090b] to-transparent z-10" />
     </section>
   );
 };

@@ -6,7 +6,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="border-t border-zinc-800/80 bg-zinc-950 text-zinc-400">
+    <footer className="border-t border-white/[0.06] bg-[#09090b] text-zinc-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {/* Brand Column */}
@@ -29,11 +29,11 @@ export const Footer = () => {
               {siteConfig.description}
             </p>
             <div className="pt-1 flex items-center space-x-3">
-              <a
+            <a
                 href={siteConfig.socials.facebook}
                 target="_blank"
                 rel="noreferrer"
-                className="px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 hover:text-yellow-400 hover:border-yellow-500/40 transition-all duration-200"
+                className="px-3.5 py-1.5 rounded-lg bg-[#18181b] border border-white/[0.07] text-xs font-bold text-zinc-300 hover:text-yellow-400 hover:border-yellow-500/30 transition-all duration-200"
               >
                 Facebook
               </a>
@@ -41,7 +41,7 @@ export const Footer = () => {
                 href={siteConfig.socials.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 hover:text-yellow-400 hover:border-yellow-500/40 transition-all duration-200"
+                className="px-3.5 py-1.5 rounded-lg bg-[#18181b] border border-white/[0.07] text-xs font-bold text-zinc-300 hover:text-yellow-400 hover:border-yellow-500/30 transition-all duration-200"
               >
                 Instagram
               </a>
@@ -114,7 +114,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-zinc-900/80 text-center md:text-left flex flex-col md:flex-row items-center justify-between text-xs text-zinc-500">
+        <div className="mt-16 pt-8 border-t border-white/[0.05] text-center md:text-left flex flex-col md:flex-row items-center justify-between text-xs text-zinc-600">
           <p>© {new Date().getFullYear()} Gymrillaz Parañaque. All rights reserved.</p>
           <p className="mt-2 md:mt-0 font-medium">
             91 Saudi Arabia St, Parañaque, 1700 Metro Manila

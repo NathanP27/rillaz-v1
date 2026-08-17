@@ -8,8 +8,8 @@ export function Skeleton({
   return (
     <div
       className={cn(
-        "animate-pulse rounded-xl bg-zinc-900/80 border border-zinc-800/60 relative overflow-hidden",
-        "before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-zinc-800/30 before:to-transparent",
+        "animate-pulse rounded-xl bg-[#18181b] border border-white/[0.05] relative overflow-hidden",
+        "before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/[0.04] before:to-transparent",
         className
       )}
       {...props}
@@ -19,7 +19,7 @@ export function Skeleton({
 
 export function BentoSkeleton() {
   return (
-    <div className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
+    <div className="py-24 px-4 sm:px-6 lg:px-8 bg-[#09090b] border-b border-white/[0.05]">
       <div className="max-w-7xl mx-auto mb-14 text-center space-y-4">
         <Skeleton className="h-4 w-44 mx-auto rounded-full" />
         <Skeleton className="h-10 w-96 max-w-full mx-auto" />
@@ -39,7 +39,7 @@ export function BentoSkeleton() {
 
 export function PricingSkeleton() {
   return (
-    <div className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
+    <div className="py-24 px-4 sm:px-6 lg:px-8 bg-[#09090b] border-b border-white/[0.05]">
       <div className="max-w-7xl mx-auto text-center space-y-4 mb-14">
         <Skeleton className="h-4 w-44 mx-auto rounded-full" />
         <Skeleton className="h-10 w-96 max-w-full mx-auto" />
@@ -55,7 +55,7 @@ export function PricingSkeleton() {
 
 export function ReviewsSkeleton() {
   return (
-    <div className="py-20 bg-zinc-950 border-b border-zinc-800 overflow-hidden">
+    <div className="py-20 bg-[#09090b] border-b border-white/[0.05] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 mb-12 text-center space-y-3">
         <Skeleton className="h-4 w-36 mx-auto rounded-full" />
         <Skeleton className="h-9 w-64 mx-auto" />

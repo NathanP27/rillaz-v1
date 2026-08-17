@@ -1,19 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0b0c0e;
-  --foreground: #f8fafc;
+  /* ── Core backgrounds: rich layered blacks ── */
+  --background: #09090b;
+  --background-2: #0f0f12;
+  --background-3: #141417;
+  --background-card: #18181b;
+  --foreground: #fafafa;
+
+  /* ── Brand palette ── */
   --gym-yellow: #eab308;
   --gym-yellow-light: #facc15;
-  --gym-charcoal: #0b0c0e;
-  --gym-slate: #16181d;
+  --gym-yellow-dim: rgba(234, 179, 8, 0.12);
+  --gym-charcoal: #09090b;
+  --gym-slate: #18181b;
+
+  /* ── Semantic text tokens ── */
+  --text-primary: #fafafa;
+  --text-secondary: #e4e4e7;
+  --text-muted: #a1a1aa;
+  --text-subtle: #71717a;
+  --text-accent: #eab308;
+
+  /* ── Border tokens ── */
+  --border-default: rgba(255, 255, 255, 0.07);
+  --border-accent: rgba(234, 179, 8, 0.35);
+  --border-glow: rgba(234, 179, 8, 0.6);
+
+  /* ── Easing ── */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
-  /* Semantic text color tokens */
-  --text-primary: #f8fafc;    /* zinc-50 — headings, high-emphasis */
-  --text-secondary: #e4e4e7;  /* zinc-200 — body copy on dark bg */
-  --text-muted: #a1a1aa;      /* zinc-400 — supporting / metadata */
-  --text-accent: #eab308;     /* yellow-500 — brand accent */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 @theme inline {
@@ -31,6 +48,10 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Subtle global ambient texture */
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(234, 179, 8, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 100% 80%, rgba(234, 179, 8, 0.025) 0%, transparent 50%);
 }
 
 /* Fluid Typography Scale & WCAG AA Contrast System */
@@ -68,9 +89,9 @@ body {
 .contrast-scrim-dark {
   background: linear-gradient(
     to top,
-    #0b0c0e 0%,
-    rgba(11, 12, 14, 0.88) 45%,
-    rgba(11, 12, 14, 0.6) 100%
+    #09090b 0%,
+    rgba(9, 9, 11, 0.9) 40%,
+    rgba(9, 9, 11, 0.55) 100%
   );
 }
 
@@ -78,9 +99,34 @@ body {
   background: radial-gradient(
     ellipse 75% 65% at 50% 100%,
     rgba(234, 179, 8, 0.15) 0%,
-    rgba(11, 12, 14, 0.85) 60%,
-    #0b0c0e 100%
+    rgba(9, 9, 11, 0.85) 60%,
+    #09090b 100%
   );
+}
+
+/* ── Premium glass card surface ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Top-edge highlight — gives depth to flat dark surfaces */
+.surface-highlight::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  pointer-events: none;
+}
+
+/* Ambient glow spot behind a section */
+.glow-spot-yellow {
+  background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(234, 179, 8, 0.08) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 /* GPU Layer Promotion & Hardware Acceleration */

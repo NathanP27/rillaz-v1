@@ -42,7 +42,7 @@ export default function MembershipsPage() {
   return (
     <>
       {/* Header */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800 relative">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#09090b] border-b border-white/[0.05] relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(234,179,8,0.08)_0%,transparent_60%)] pointer-events-none" />
         <div className="max-w-5xl mx-auto text-center space-y-5">
           <p className="text-xs font-extrabold uppercase tracking-widest text-yellow-400">
@@ -61,7 +61,7 @@ export default function MembershipsPage() {
       <PricingMatrixSection />
 
       {/* Amenities Included */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-900 border-b border-zinc-800">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0f0f12] border-b border-white/[0.05]">
         <div className="max-w-5xl mx-auto text-center space-y-3 mb-12">
           <h2 className="text-xs font-extrabold uppercase tracking-widest text-yellow-400">
             WHAT'S INCLUDED
@@ -81,7 +81,7 @@ export default function MembershipsPage() {
             "Training Guidance on Request",
             "Clean & Secure Environment",
           ].map((item, idx) => (
-            <div key={idx} className="flex items-center space-x-3 p-4 rounded-xl bg-zinc-950 border border-zinc-800">
+            <div key={idx} className="flex items-center space-x-3 p-4 rounded-xl bg-[#18181b] border border-white/[0.07] hover:border-yellow-500/20 transition-all duration-200">
               <Check className="w-5 h-5 text-yellow-400 shrink-0" />
               <span className="text-sm font-semibold text-zinc-200">{item}</span>
             </div>
@@ -90,7 +90,7 @@ export default function MembershipsPage() {
       </section>
 
       {/* FAQ Accordion */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#09090b] border-b border-white/[0.05]">
         <div className="max-w-3xl mx-auto">
           <div className="text-center space-y-3 mb-12">
             <h2 className="text-xs font-extrabold uppercase tracking-widest text-yellow-400">
@@ -104,8 +104,9 @@ export default function MembershipsPage() {
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-yellow-500/30 transition-colors"
+                className="p-6 rounded-2xl bg-[#18181b] border border-white/[0.07] hover:border-yellow-500/25 transition-all duration-200 hover:shadow-[0_4px_24px_rgba(234,179,8,0.05)] relative overflow-hidden"
               >
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/8 to-transparent pointer-events-none" />
                 <div className="flex items-start space-x-3 mb-3">
                   <HelpCircle className="w-5 h-5 text-yellow-400 shrink-0 mt-0.5" />
                   <h3 className="font-extrabold text-white text-sm uppercase tracking-wide">

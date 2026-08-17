@@ -37,7 +37,7 @@ const reviews = [
 
 export const ReviewsMarqueeSection = () => {
   return (
-    <section className="below-fold py-20 bg-zinc-950 border-b border-zinc-800 overflow-hidden">
+    <section className="below-fold py-20 bg-[#0f0f12] border-b border-white/[0.05] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
         <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-yellow-400 mb-2">
           WORD ON THE STREET
@@ -51,7 +51,7 @@ export const ReviewsMarqueeSection = () => {
         {reviews.map((review, idx) => (
           <div
             key={idx}
-            className="w-80 sm:w-96 rounded-2xl p-6 bg-zinc-900/90 border border-zinc-800 flex flex-col justify-between space-y-4 shrink-0 hover:border-yellow-500/40 transition-colors"
+          className="w-80 sm:w-96 rounded-2xl p-6 bg-[#18181b] border border-white/[0.07] flex flex-col justify-between space-y-4 shrink-0 hover:border-yellow-500/25 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(234,179,8,0.06)] relative overflow-hidden"
           >
             <div className="flex items-center justify-between">
               <div className="flex space-x-1">

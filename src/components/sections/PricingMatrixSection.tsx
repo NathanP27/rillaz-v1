@@ -45,7 +45,7 @@ export const PricingMatrixSection = () => {
   ];
 
   return (
-    <section className="below-fold py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
+    <section className="below-fold py-24 px-4 sm:px-6 lg:px-8 bg-[#09090b] border-b border-white/[0.05]">
       <ScrollReveal className="max-w-7xl mx-auto text-center space-y-4 mb-14">
         <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-yellow-400">
           MEMBERSHIPS & RATES
@@ -139,7 +139,8 @@ export const PricingMatrixSection = () => {
           { text: "“Best ₱120 walk-in day pass in Parañaque.”", author: "Kenji M. • Lifter" },
           { text: "“Coaches are super helpful with form checks.”", author: "Sarah G. • Member" },
         ].map((badge, bIdx) => (
-          <div key={bIdx} className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80 space-y-1.5 backdrop-blur-sm">
+          <div key={bIdx} className="p-4 rounded-xl bg-[#18181b] border border-white/[0.07] space-y-1.5 relative overflow-hidden">
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/8 to-transparent pointer-events-none" />
             <div className="flex text-yellow-400 space-x-1">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="w-3 h-3 fill-yellow-400" />

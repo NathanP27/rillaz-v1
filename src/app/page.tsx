@@ -50,7 +50,8 @@ export default function HomePage() {
       <ReviewsMarqueeSection />
       <PricingMatrixSection />
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-zinc-900 to-zinc-950 border-b border-zinc-800">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0f0f12] border-b border-white/[0.05] relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,rgba(234,179,8,0.06),transparent)] pointer-events-none" />
         <div className="max-w-5xl mx-auto text-center space-y-6">
           <p className="text-xs font-extrabold uppercase tracking-widest text-yellow-400">
             GYMRILLAZ PARANAQUE

@@ -96,7 +96,8 @@ export const LeadCaptureForm = () => {
   };
 
   return (
-    <div className="rounded-2xl p-6 sm:p-8 bg-zinc-900/90 border border-zinc-800 shadow-2xl relative">
+    <div className="rounded-2xl p-6 sm:p-8 bg-[#18181b] border border-white/[0.07] shadow-2xl relative overflow-hidden">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
       {submitted ? (
         <div className="py-10 text-center space-y-4">
           <CheckCircle2 className="w-16 h-16 text-yellow-400 mx-auto animate-bounce" />

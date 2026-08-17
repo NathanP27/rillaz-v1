@@ -24,8 +24,8 @@ export const Navbar = () => {
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-500 ${
         scrolled
-          ? "border-b border-zinc-800/80 bg-zinc-950/95 backdrop-blur-xl shadow-2xl shadow-black/50"
-          : "border-b border-transparent bg-zinc-950/60 backdrop-blur-md"
+          ? "border-b border-white/[0.06] bg-[#09090b]/95 backdrop-blur-2xl shadow-[0_1px_0_rgba(255,255,255,0.04),0_8px_32px_rgba(0,0,0,0.6)]"
+          : "border-b border-transparent bg-[#09090b]/50 backdrop-blur-md"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">

@@ -82,7 +82,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Heading */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800 relative">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#09090b] border-b border-white/[0.05] relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(234,179,8,0.08)_0%,transparent_60%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto space-y-6">
           <p className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-yellow-400">
@@ -105,7 +105,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-900 border-b border-zinc-800">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0f0f12] border-b border-white/[0.05]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 text-center space-y-3">
             <h2 className="text-fluid-meta text-yellow-400">
@@ -135,8 +135,9 @@ export default function AboutPage() {
             ].map((value, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-2xl bg-zinc-950 border border-zinc-800 hover:border-yellow-500/30 transition-colors space-y-4"
+                className="p-8 rounded-2xl bg-[#18181b] border border-white/[0.07] hover:border-yellow-500/25 transition-all duration-300 hover:shadow-[0_8px_32px_rgba(234,179,8,0.06)] space-y-4 relative overflow-hidden"
               >
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
                 {value.icon}
                 <h3 className="font-black text-fluid-h3 uppercase text-white tracking-wide">
                   {value.title}
@@ -149,7 +150,7 @@ export default function AboutPage() {
       </section>
 
       {/* Facility Photo Grid */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#09090b] border-b border-white/[0.05]">
         <div className="max-w-7xl mx-auto mb-14 text-center space-y-3">
           <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-yellow-400">
             THE EQUIPMENT
@@ -162,7 +163,7 @@ export default function AboutPage() {
           {facilities.map((facility, idx) => (
             <div
               key={idx}
-              className="relative rounded-2xl overflow-hidden group min-h-[340px] p-6 flex flex-col justify-between border border-zinc-800 hover:border-yellow-500/40 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/10"
+              className="relative rounded-2xl overflow-hidden group min-h-[340px] p-6 flex flex-col justify-between border border-white/[0.07] hover:border-yellow-500/30 transition-all duration-500 hover:shadow-[0_12px_48px_rgba(234,179,8,0.08)]"
             >
               <Image
                 src={facility.photo}

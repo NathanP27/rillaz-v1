@@ -100,7 +100,7 @@ export default function ProgramsPage() {
   return (
     <>
       {/* Header */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800 relative">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#09090b] border-b border-white/[0.05] relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(234,179,8,0.08)_0%,transparent_60%)] pointer-events-none" />
         <div className="max-w-5xl mx-auto text-center space-y-4">
           <p className="text-fluid-meta text-yellow-400">
@@ -116,12 +116,12 @@ export default function ProgramsPage() {
       </section>
 
       {/* Training Stream Cards */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#09090b] border-b border-white/[0.05]">
         <div className="max-w-7xl mx-auto space-y-8">
           {programs.map((program, idx) => (
             <div
               key={idx}
-              className="grid grid-cols-1 lg:grid-cols-5 gap-0 rounded-2xl overflow-hidden border border-zinc-800 hover:border-yellow-500/40 transition-all duration-500 group hover:shadow-2xl hover:shadow-yellow-500/5"
+              className="grid grid-cols-1 lg:grid-cols-5 gap-0 rounded-2xl overflow-hidden border border-white/[0.07] hover:border-yellow-500/30 transition-all duration-500 group hover:shadow-[0_12px_48px_rgba(234,179,8,0.07)]"
             >
               {/* Program Heading Panel */}
               <div className="lg:col-span-2 relative min-h-[260px] lg:min-h-[280px] p-6 sm:p-8 flex flex-col justify-between overflow-hidden">
@@ -151,7 +151,7 @@ export default function ProgramsPage() {
               </div>
 
               {/* Program Details Panel */}
-              <div className="lg:col-span-3 p-6 sm:p-8 bg-zinc-900/90 space-y-4 flex flex-col justify-between">
+              <div className="lg:col-span-3 p-6 sm:p-8 bg-[#18181b] space-y-4 flex flex-col justify-between">
                 <div>
                   <p className="text-zinc-300 text-fluid-body leading-relaxed max-w-prose">
                     {program.description}
@@ -165,7 +165,7 @@ export default function ProgramsPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="pt-4 border-t border-zinc-800">
+                <div className="pt-4 border-t border-white/[0.06]">
                   <Link href="/contact" className="block w-full sm:w-auto">
                     <ShimmerButton className="w-full sm:w-auto min-h-[48px] text-xs py-3 px-6 font-black">
                       Inquire About This Program
@@ -179,7 +179,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* First Day Walkthrough */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-900 border-b border-zinc-800">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0f0f12] border-b border-white/[0.05]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-3 mb-16">
             <h2 className="text-xs font-extrabold uppercase tracking-widest text-yellow-400">
@@ -198,7 +198,7 @@ export default function ProgramsPage() {
                 <div className="shrink-0 w-12 h-12 rounded-full bg-yellow-500 text-black flex items-center justify-center font-black text-sm shadow-lg shadow-yellow-500/30">
                   {step.step}
                 </div>
-                <div className="pt-1 pb-6 border-b border-zinc-800 w-full">
+                <div className="pt-1 pb-6 border-b border-white/[0.06] w-full">
                   <h3 className="font-extrabold text-white uppercase text-base mb-1">
                     {step.time}
                   </h3>
@@ -213,7 +213,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Schedule & Hours */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-950">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#09090b]">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-xs font-extrabold uppercase tracking-widest text-yellow-400">
             OPEN GYM ACCESS SCHEDULE
@@ -221,7 +221,7 @@ export default function ProgramsPage() {
           <p className="text-3xl font-black uppercase text-white">
             TRAIN ANYTIME, ANY DAY
           </p>
-          <div className="inline-flex items-center space-x-3 px-8 py-5 rounded-2xl bg-zinc-900 border border-zinc-800 text-white">
+          <div className="inline-flex items-center space-x-3 px-8 py-5 rounded-2xl bg-[#18181b] border border-white/[0.07] text-white">
             <Clock className="w-6 h-6 text-yellow-400" />
             <div className="text-left">
               <div className="font-black text-xl uppercase">{siteConfig.hours.display}</div>

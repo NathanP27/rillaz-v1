@@ -23,7 +23,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Header */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800 relative">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#09090b] border-b border-white/[0.05] relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(234,179,8,0.07)_0%,transparent_60%)] pointer-events-none" />
         <div className="max-w-5xl mx-auto text-center space-y-5">
           <p className="text-xs font-extrabold uppercase tracking-widest text-yellow-400">

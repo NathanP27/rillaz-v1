@@ -29,7 +29,7 @@ const BentoPhotoCard = ({
   children,
 }: BentoPhotoCardProps) => (
   <div
-    className={`relative rounded-2xl overflow-hidden group border border-zinc-800 hover:border-yellow-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/10 p-6 flex flex-col justify-between ${className}`}
+    className={`relative rounded-2xl overflow-hidden group border border-white/[0.07] hover:border-yellow-500/35 transition-all duration-500 hover:shadow-[0_12px_48px_rgba(234,179,8,0.08)] p-6 flex flex-col justify-between ${className}`}
   >
     {/* Real photo background */}
     <Image
@@ -43,8 +43,8 @@ const BentoPhotoCard = ({
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     />
     {/* Enhanced Multi-stop Contrast Scrim */}
-    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-zinc-950/20 z-0" />
-    <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/40 via-transparent to-transparent z-0" />
+    <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/72 to-[#09090b]/15 z-0" />
+    <div className="absolute inset-0 bg-gradient-to-r from-[#09090b]/40 via-transparent to-transparent z-0" />
 
     {/* Header Badge Row */}
     {badge ? (
@@ -76,7 +76,7 @@ const BentoPhotoCard = ({
 
 export const VibeBentoSection = () => {
   return (
-    <section className="below-fold py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800 relative overflow-hidden">
+    <section className="below-fold py-24 px-4 sm:px-6 lg:px-8 bg-[#09090b] border-b border-white/[0.05] relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-yellow-500/5 blur-[150px] rounded-full pointer-events-none" />
 
       <ScrollReveal className="max-w-7xl mx-auto mb-14 text-center space-y-4 relative z-10">

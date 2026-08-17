@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/Card";
 
 export const ContactFormSection = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#09090b] border-b border-white/[0.05]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         {/* Left Column: Direct Info & Location Details */}
         <div className="space-y-8">
