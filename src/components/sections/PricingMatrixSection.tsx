@@ -2,10 +2,11 @@
 
 import React from "react";
 import Link from "next/link";
-import { Check, Flame } from "lucide-react";
+import { Check, Flame, Star, Quote } from "lucide-react";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
+import { TrustBadges } from "@/components/ui/TrustBadges";
 
 export const PricingMatrixSection = () => {
   const plans = [
@@ -114,13 +115,13 @@ export const PricingMatrixSection = () => {
             <div className="pt-4">
               <Link href="/contact" className="block w-full">
                 {plan.popular ? (
-                  <ShimmerButton className="w-full text-sm py-3.5">
+                  <ShimmerButton className="w-full text-sm py-3.5 min-h-[48px] font-black">
                     {plan.ctaText}
                   </ShimmerButton>
                 ) : (
                   <button
                     type="button"
-                    className="w-full py-3.5 rounded-full border border-zinc-700 bg-zinc-800 hover:bg-zinc-700 active:scale-[0.98] text-white font-extrabold uppercase tracking-wider text-sm transition-all duration-200"
+                    className="w-full py-3.5 min-h-[48px] rounded-full border border-zinc-700 bg-zinc-800 hover:bg-zinc-700 active:scale-[0.98] text-white font-extrabold uppercase tracking-wider text-sm transition-all duration-200"
                   >
                     {plan.ctaText}
                   </button>
@@ -131,6 +132,28 @@ export const PricingMatrixSection = () => {
         </StaggerItem>
         ))}
       </StaggerContainer>
+
+      {/* Member Review Callout Badges */}
+      <ScrollReveal className="max-w-4xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          { text: "“Clean floor, serious lifters, and dumbbells up to 60 lbs.”", author: "Marco D. • Member" },
+          { text: "“Best ₱120 walk-in day pass in Parañaque.”", author: "Kenji M. • Lifter" },
+          { text: "“Coaches are super helpful with form checks.”", author: "Sarah G. • Member" },
+        ].map((badge, bIdx) => (
+          <div key={bIdx} className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80 space-y-1.5 backdrop-blur-sm">
+            <div className="flex text-yellow-400 space-x-1">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="w-3 h-3 fill-yellow-400" />
+              ))}
+            </div>
+            <p className="text-xs text-zinc-300 italic">{badge.text}</p>
+            <p className="text-[11px] font-bold text-yellow-400 uppercase">{badge.author}</p>
+          </div>
+        ))}
+      </ScrollReveal>
+
+      {/* Global Trust Markers */}
+      <TrustBadges className="mt-10" />
     </section>
   );
 };
