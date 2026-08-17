@@ -115,73 +115,66 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      {/* Training Stream Cards with Mobile Scroll-Snap Carousel */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
-        <div className="max-w-7xl mx-auto">
-          {/* Mobile Swipe Hint */}
-          <div className="lg:hidden text-right text-[11px] font-bold uppercase tracking-wider text-yellow-400 mb-3 flex items-center justify-end space-x-1">
-            <span>Swipe programs →</span>
-          </div>
-
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 scrollbar-none lg:grid lg:grid-cols-1 lg:gap-8">
-            {programs.map((program, idx) => (
-              <div
-                key={idx}
-                className="min-w-[86vw] sm:min-w-[70vw] lg:min-w-0 snap-center grid grid-cols-1 lg:grid-cols-5 gap-0 rounded-2xl overflow-hidden border border-zinc-800 hover:border-yellow-500/40 transition-all duration-500 group hover:shadow-2xl hover:shadow-yellow-500/5 shrink-0 lg:shrink"
-              >
-                {/* Program Heading Panel */}
-                <div className="lg:col-span-2 relative min-h-[240px] lg:min-h-[280px] p-6 sm:p-8 flex flex-col justify-between overflow-hidden">
-                  <Image
-                    src={program.photo}
-                    alt={program.name}
-                    fill
-                    quality={85}
-                    loading="lazy"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 1024px) 86vw, 40vw"
-                  />
-                  <div className="absolute inset-0 contrast-scrim-dark z-0" />
-                  <div className="relative z-10 space-y-2.5">
-                    {program.icon}
-                    <p className="text-fluid-meta text-yellow-400">
-                      {program.tagline}
-                    </p>
-                    <h2 className="font-black text-fluid-h2 uppercase text-white leading-tight">
-                      {program.name}
-                    </h2>
-                  </div>
-                  <div className="relative z-10 flex items-center space-x-2 text-xs font-bold text-zinc-300 border-t border-white/10 pt-3.5 mt-3">
-                    <Users className="w-4 h-4 text-yellow-400 shrink-0" />
-                    <span>{program.suitable}</span>
-                  </div>
+      {/* Training Stream Cards */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
+        <div className="max-w-7xl mx-auto space-y-8">
+          {programs.map((program, idx) => (
+            <div
+              key={idx}
+              className="grid grid-cols-1 lg:grid-cols-5 gap-0 rounded-2xl overflow-hidden border border-zinc-800 hover:border-yellow-500/40 transition-all duration-500 group hover:shadow-2xl hover:shadow-yellow-500/5"
+            >
+              {/* Program Heading Panel */}
+              <div className="lg:col-span-2 relative min-h-[260px] lg:min-h-[280px] p-6 sm:p-8 flex flex-col justify-between overflow-hidden">
+                <Image
+                  src={program.photo}
+                  alt={program.name}
+                  fill
+                  quality={85}
+                  loading="lazy"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+                <div className="absolute inset-0 contrast-scrim-dark z-0" />
+                <div className="relative z-10 space-y-2.5">
+                  {program.icon}
+                  <p className="text-fluid-meta text-yellow-400">
+                    {program.tagline}
+                  </p>
+                  <h2 className="font-black text-fluid-h2 uppercase text-white leading-tight">
+                    {program.name}
+                  </h2>
                 </div>
-
-                {/* Program Details Panel */}
-                <div className="lg:col-span-3 p-6 sm:p-8 bg-zinc-900/90 space-y-4 flex flex-col justify-between">
-                  <div>
-                    <p className="text-zinc-300 text-fluid-body leading-relaxed max-w-prose">
-                      {program.description}
-                    </p>
-                    <ul className="space-y-2.5 mt-4">
-                      {program.includes.map((item, iIdx) => (
-                        <li key={iIdx} className="flex items-start space-x-3 text-sm text-zinc-300">
-                          <ArrowRight className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="pt-4 border-t border-zinc-800">
-                    <Link href="/contact" className="block w-full sm:w-auto">
-                      <ShimmerButton className="w-full sm:w-auto min-h-[48px] text-xs py-3 px-6 font-black">
-                        Inquire About This Program
-                      </ShimmerButton>
-                    </Link>
-                  </div>
+                <div className="relative z-10 flex items-center space-x-2 text-xs font-bold text-zinc-300 border-t border-white/10 pt-3.5 mt-3">
+                  <Users className="w-4 h-4 text-yellow-400 shrink-0" />
+                  <span>{program.suitable}</span>
                 </div>
               </div>
-            ))}
-          </div>
+
+              {/* Program Details Panel */}
+              <div className="lg:col-span-3 p-6 sm:p-8 bg-zinc-900/90 space-y-4 flex flex-col justify-between">
+                <div>
+                  <p className="text-zinc-300 text-fluid-body leading-relaxed max-w-prose">
+                    {program.description}
+                  </p>
+                  <ul className="space-y-2.5 mt-4">
+                    {program.includes.map((item, iIdx) => (
+                      <li key={iIdx} className="flex items-start space-x-3 text-sm text-zinc-300">
+                        <ArrowRight className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="pt-4 border-t border-zinc-800">
+                  <Link href="/contact" className="block w-full sm:w-auto">
+                    <ShimmerButton className="w-full sm:w-auto min-h-[48px] text-xs py-3 px-6 font-black">
+                      Inquire About This Program
+                    </ShimmerButton>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

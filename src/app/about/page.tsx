@@ -105,9 +105,9 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values Section */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-zinc-900 border-b border-zinc-800">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-900 border-b border-zinc-800">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-10 text-center space-y-3">
+          <div className="mb-12 text-center space-y-3">
             <h2 className="text-fluid-meta text-yellow-400">
               CORE IDENTITY
             </h2>
@@ -115,7 +115,7 @@ export default function AboutPage() {
               THE RILLAZ CODE
             </p>
           </div>
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 scrollbar-none md:grid md:grid-cols-3 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 icon: <Dumbbell className="w-8 h-8 text-yellow-400" />,
@@ -135,7 +135,7 @@ export default function AboutPage() {
             ].map((value, idx) => (
               <div
                 key={idx}
-                className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center p-6 sm:p-8 rounded-2xl bg-zinc-950 border border-zinc-800 hover:border-yellow-500/30 transition-colors space-y-4 shrink-0 md:shrink"
+                className="p-8 rounded-2xl bg-zinc-950 border border-zinc-800 hover:border-yellow-500/30 transition-colors space-y-4"
               >
                 {value.icon}
                 <h3 className="font-black text-fluid-h3 uppercase text-white tracking-wide">
@@ -148,9 +148,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Facility Photo Grid with Mobile Scroll-Snap */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
-        <div className="max-w-7xl mx-auto mb-10 text-center space-y-3">
+      {/* Facility Photo Grid */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
+        <div className="max-w-7xl mx-auto mb-14 text-center space-y-3">
           <h2 className="text-fluid-meta text-yellow-400">
             THE EQUIPMENT
           </h2>
@@ -158,11 +158,11 @@ export default function AboutPage() {
             STEEL, IRON & SWEAT
           </p>
         </div>
-        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 scrollbar-none sm:grid sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {facilities.map((facility, idx) => (
             <div
               key={idx}
-              className="min-w-[85vw] sm:min-w-0 snap-center relative rounded-2xl overflow-hidden group min-h-[280px] border border-zinc-800 hover:border-yellow-500/40 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/10 shrink-0 sm:shrink"
+              className="relative rounded-2xl overflow-hidden group min-h-[280px] border border-zinc-800 hover:border-yellow-500/40 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/10"
             >
               <Image
                 src={facility.photo}
@@ -171,7 +171,7 @@ export default function AboutPage() {
                 quality={80}
                 loading="lazy"
                 className="object-cover transition-transform duration-700 group-hover:scale-108"
-                sizes="(max-width: 640px) 85vw, (max-width: 1024px) 50vw, 25vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               />
               <div className="absolute inset-0 contrast-scrim-dark" />
               <div className="absolute top-4 right-4 px-3 py-1 text-fluid-meta text-yellow-400 bg-zinc-950/90 border border-yellow-500/30 rounded-full backdrop-blur-md">
