@@ -44,7 +44,7 @@ export const LocalBusinessSchema = () => {
     ],
     priceRange: "₱120 - ₱1,200",
     currenciesAccepted: "PHP",
-    paymentAccepted: "Cash, GCash, Bank Transfer",
+    paymentAccepted: "Cash, GCash",
     hasMap: "https://maps.google.com/?q=91+Saudi+Arabia+St+Paranaque",
     sameAs: [siteConfig.socials.facebook, siteConfig.socials.instagram],
   };
