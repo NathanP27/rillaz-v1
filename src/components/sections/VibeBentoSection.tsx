@@ -3,6 +3,7 @@ import Image from "next/image";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { Dumbbell, Zap, Flame, Users, Trophy } from "lucide-react";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
+import { Tooltip } from "@/components/ui/tooltip";
 
 type BentoPhotoCardProps = {
   src: string;
@@ -44,9 +45,11 @@ const BentoPhotoCard = ({
     <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/30 via-transparent to-transparent" />
 
     {badge && (
-      <div className="absolute top-4 right-4 z-20 px-3 py-1 text-[10px] font-black tracking-widest uppercase text-yellow-400 bg-black/70 border border-yellow-500/30 rounded-full backdrop-blur-sm">
-        {badge}
-      </div>
+      <Tooltip content={`Facility Zone: ${badge}`} side="left">
+        <div className="absolute top-4 right-4 z-20 px-3 py-1 text-[10px] font-black tracking-widest uppercase text-yellow-400 bg-black/70 border border-yellow-500/30 rounded-full backdrop-blur-sm">
+          {badge}
+        </div>
+      </Tooltip>
     )}
 
     <div className="absolute bottom-0 left-0 right-0 z-10 p-6 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">

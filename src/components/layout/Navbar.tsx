@@ -7,6 +7,7 @@ import { siteConfig, navigation } from "@/config/site";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { Tooltip } from "@/components/ui/tooltip";
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -66,11 +67,13 @@ export const Navbar = () => {
 
         {/* Desktop Right CTA */}
         <div className="hidden md:flex items-center space-x-4 shrink-0">
-          <Link href="/contact">
-            <ShimmerButton className="text-xs py-2 px-5 font-black">
-              Free Trial Pass
-            </ShimmerButton>
-          </Link>
+          <Tooltip content="Claim 1-Day Pass • No Lock-In" side="bottom">
+            <Link href="/contact">
+              <ShimmerButton className="text-xs py-2 px-5 font-black">
+                Free Trial Pass
+              </ShimmerButton>
+            </Link>
+          </Tooltip>
         </div>
 
         {/* Mobile Menu Button */}

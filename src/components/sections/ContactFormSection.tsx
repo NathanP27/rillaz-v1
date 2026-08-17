@@ -73,6 +73,10 @@ export const ContactFormSection = () => {
       return;
     }
 
+    // Optimistically update UI immediately (< 50ms response)
+    setSubmitted(true);
+    setLoading(true);
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -86,13 +90,15 @@ export const ContactFormSection = () => {
       const result = await res.json();
 
       if (!res.ok) {
+        // Revert optimistic update on failure
+        setSubmitted(false);
         throw new Error(result.error || "Failed to send inquiry. Please try again.");
       }
 
       // Record local submission timestamp
       localStorage.setItem("gymrillaz_pass_sub_time", Date.now().toString());
-      setSubmitted(true);
     } catch (err: any) {
+      setSubmitted(false);
       setErrorMsg(err.message || "An unexpected error occurred.");
     } finally {
       setLoading(false);
