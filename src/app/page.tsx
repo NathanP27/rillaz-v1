@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { GymStatsSection } from "@/components/sections/GymStatsSection";
+import { OnboardingSteps } from "@/components/sections/OnboardingSteps";
 import { BentoSkeleton, ReviewsSkeleton, PricingSkeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
@@ -44,6 +45,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <GymStatsSection />
+      <OnboardingSteps />
       <VibeBentoSection />
       <ReviewsMarqueeSection />
       <PricingMatrixSection />

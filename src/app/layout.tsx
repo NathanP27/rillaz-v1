@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 import { siteConfig } from "@/config/site";
 import { PageTransition } from "@/components/ui/page-transition";
@@ -91,10 +92,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950 text-white min-h-screen flex flex-col`}
       >
         <Navbar />
-        <main className="flex-1">
+        <main className="flex-1 pb-16 md:pb-0">
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
+        <MobileActionBar />
         <SpeedInsights />
       </body>
     </html>
