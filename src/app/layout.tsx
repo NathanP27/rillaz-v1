@@ -63,8 +63,11 @@ export const metadata: Metadata = {
     images: ["/images/gallery/565123458_1240238891457994_3695900658646377638_n.jpg"],
   },
   icons: {
-    icon: "/images/gallery/LOGO.jpg",
-    apple: "/images/gallery/LOGO.jpg",
+    icon: [
+      { url: "/images/gallery/LOGO.jpg", type: "image/jpeg" },
+      { url: "/favicon.ico" },
+    ],
+    apple: [{ url: "/images/gallery/LOGO.jpg", type: "image/jpeg" }],
   },
   manifest: "/site.webmanifest",
   other: {
