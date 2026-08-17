@@ -30,10 +30,10 @@ export const HeroSection = () => {
       {/* Grid texture overlay */}
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#27272a08_1px,transparent_1px),linear-gradient(to_bottom,#27272a08_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-24 lg:py-28 text-center space-y-5 sm:space-y-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36 text-center space-y-6 sm:space-y-8">
         {/* Badge */}
         <div
-          className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-full bg-zinc-950/90 border border-yellow-500/40 text-yellow-400 text-fluid-meta backdrop-blur-xl shadow-2xl shadow-yellow-500/10 animate-fade-in min-h-[36px]"
+          className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-zinc-950/90 border border-yellow-500/40 text-yellow-400 text-xs sm:text-sm font-extrabold uppercase tracking-wider backdrop-blur-xl shadow-2xl shadow-yellow-500/10 animate-fade-in"
           style={{ animationDelay: "0.1s" }}
         >
           <Flame className="w-4 h-4 text-yellow-400 animate-pulse shrink-0" />
@@ -42,7 +42,7 @@ export const HeroSection = () => {
 
         {/* Headline */}
         <h1
-          className="text-fluid-h1 font-black uppercase text-white animate-fade-up tracking-tighter"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase text-white tracking-tighter leading-[0.95] animate-fade-up"
           style={{ animationDelay: "0.2s" }}
         >
           UNLEASH YOUR{" "}
@@ -52,9 +52,9 @@ export const HeroSection = () => {
           </span>
         </h1>
 
-        {/* Subtitle with max-w-prose Line Architecture */}
+        {/* Subtitle */}
         <p
-          className="max-w-prose mx-auto text-zinc-200 text-fluid-body font-normal leading-relaxed animate-fade-up"
+          className="max-w-2xl mx-auto text-zinc-200 text-base sm:text-lg md:text-xl font-normal leading-relaxed animate-fade-up"
           style={{ animationDelay: "0.35s" }}
         >
           Heavy iron, specialized bodybuilding equipment, functional conditioning, and a dedicated lifting community in Parañaque.

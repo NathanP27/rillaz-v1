@@ -151,36 +151,46 @@ export default function AboutPage() {
       {/* Facility Photo Grid */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
         <div className="max-w-7xl mx-auto mb-14 text-center space-y-3">
-          <h2 className="text-fluid-meta text-yellow-400">
+          <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-yellow-400">
             THE EQUIPMENT
           </h2>
-          <p className="text-fluid-h2 font-black uppercase text-white">
+          <p className="text-3xl sm:text-5xl font-black uppercase text-white">
             STEEL, IRON & SWEAT
           </p>
         </div>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {facilities.map((facility, idx) => (
             <div
               key={idx}
-              className="relative rounded-2xl overflow-hidden group min-h-[280px] border border-zinc-800 hover:border-yellow-500/40 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/10"
+              className="relative rounded-2xl overflow-hidden group min-h-[340px] p-6 flex flex-col justify-between border border-zinc-800 hover:border-yellow-500/40 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/10"
             >
               <Image
                 src={facility.photo}
                 alt={facility.name}
                 fill
-                quality={80}
+                quality={85}
                 loading="lazy"
-                className="object-cover transition-transform duration-700 group-hover:scale-108"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               />
-              <div className="absolute inset-0 contrast-scrim-dark" />
-              <div className="absolute top-4 right-4 px-3 py-1 text-fluid-meta text-yellow-400 bg-zinc-950/90 border border-yellow-500/30 rounded-full backdrop-blur-md">
-                {facility.badge}
+              <div className="absolute inset-0 contrast-scrim-dark z-0" />
+              
+              {/* Header Badge Row */}
+              <div className="relative z-10 flex justify-end">
+                <span className="px-3 py-1 text-[10px] sm:text-xs font-black tracking-widest uppercase text-yellow-400 bg-zinc-950/90 border border-yellow-500/30 rounded-full backdrop-blur-md">
+                  {facility.badge}
+                </span>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                <div className="mb-1 text-yellow-400">{facility.icon}</div>
-                <h3 className="font-extrabold text-fluid-h3 text-white uppercase">{facility.name}</h3>
-                <p className="text-zinc-300 text-fluid-body mt-1 leading-relaxed max-w-prose">{facility.description}</p>
+
+              {/* Card Footer Content */}
+              <div className="relative z-10 space-y-2 pt-12">
+                <div className="text-yellow-400">{facility.icon}</div>
+                <h3 className="font-extrabold text-lg sm:text-xl text-white uppercase leading-tight">
+                  {facility.name}
+                </h3>
+                <p className="text-zinc-300 text-xs sm:text-sm leading-relaxed">
+                  {facility.description}
+                </p>
               </div>
             </div>
           ))}
