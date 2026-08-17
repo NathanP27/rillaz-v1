@@ -24,14 +24,14 @@ const PricingMatrixSection = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "GYMRILLAZ | Parañaque High-Intensity Community Gym",
+  title: "Home",
   description:
     "Gymrillaz — Parañaque's premier gym for heavy lifting, bodybuilding, and functional fitness. Open 8 AM – 9 PM daily at 91 Saudi Arabia St. Claim your free day pass today.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "GYMRILLAZ | Parañaque High-Intensity Community Gym",
+    title: "Gymrillaz | Home",
     description:
       "Parañaque's premier gym for heavy lifting, bodybuilding, and functional fitness. Open 8 AM – 9 PM daily.",
     url: "/",

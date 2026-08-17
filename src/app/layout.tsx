@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "GYMRILLAZ | Parañaque's High-Intensity Community Gym",
-    template: "%s | GYMRILLAZ",
+    default: "Gymrillaz | Home",
+    template: "Gymrillaz | %s",
   },
   description:
     "Gymrillaz is Parañaque's premier community gym for heavy lifting, bodybuilding, and functional fitness. Open 8 AM – 9 PM daily at 91 Saudi Arabia St, 1700 Metro Manila.",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_PH",
     url: siteConfig.url,
-    title: "GYMRILLAZ | Unleash Your Inner Beast",
+    title: "Gymrillaz | Home",
     description:
       "Parañaque's premier community gym built for heavy lifting, athletic conditioning, bodybuilding, and functional fitness.",
     siteName: "GYMRILLAZ",
@@ -57,14 +57,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GYMRILLAZ | Parañaque's High-Intensity Community Gym",
+    title: "Gymrillaz | Home",
     description:
       "Parañaque's premier community gym built for heavy lifting, athletic conditioning, bodybuilding, and functional fitness.",
     images: ["/images/gallery/565123458_1240238891457994_3695900658646377638_n.jpg"],
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/images/gallery/LOGO.jpg",
+    apple: "/images/gallery/LOGO.jpg",
   },
   manifest: "/site.webmanifest",
   other: {

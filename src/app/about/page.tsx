@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: "/about",
   },
   openGraph: {
-    title: "About | GYMRILLAZ Parañaque",
+    title: "Gymrillaz | About",
     description:
       "Learn the origin, mission, and culture behind Gymrillaz — Parañaque's elite strength and conditioning gym.",
     url: "/about",

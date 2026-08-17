@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: "/memberships",
   },
   openGraph: {
-    title: "Memberships | GYMRILLAZ Parañaque",
+    title: "Gymrillaz | Memberships",
     description:
       "Explore Gymrillaz membership plans, monthly rates (₱1,200/mo), and walk-in day pass options (₱120/visit). Transparent pricing, zero hidden fees.",
     url: "/memberships",
