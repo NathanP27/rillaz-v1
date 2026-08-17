@@ -1,7 +1,7 @@
 import React from "react";
-import Link from "next/link";
 import { Ticket, MapPin, Dumbbell, ArrowRight } from "lucide-react";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
 
 const steps = [
   {
@@ -43,10 +43,10 @@ export const OnboardingSteps = () => {
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
           {steps.map((item, idx) => (
             <StaggerItem key={idx} className="relative">
-              <div className="h-full p-8 rounded-2xl bg-zinc-950 border border-zinc-800 hover:border-yellow-500/40 transition-all duration-300 flex flex-col justify-between space-y-6 group hover:-translate-y-1">
+              <CardSpotlight className="h-full flex flex-col justify-between space-y-6">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-yellow-400 shadow-md">
+                    <div className="w-12 h-12 rounded-xl bg-zinc-950 border border-zinc-800 flex items-center justify-center text-yellow-400 shadow-md">
                       {item.icon}
                     </div>
                     <span className="font-black text-2xl text-zinc-700 group-hover:text-yellow-400 transition-colors">
@@ -66,7 +66,7 @@ export const OnboardingSteps = () => {
                     <ArrowRight className="w-6 h-6" />
                   </div>
                 )}
-              </div>
+              </CardSpotlight>
             </StaggerItem>
           ))}
         </StaggerContainer>

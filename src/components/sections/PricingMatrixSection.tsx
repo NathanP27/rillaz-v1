@@ -2,11 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
-import { Check, Flame, Star, Quote } from "lucide-react";
+import { Check, Flame, Star } from "lucide-react";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
 import { TrustBadges } from "@/components/ui/TrustBadges";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
 
 export const PricingMatrixSection = () => {
   const plans = [
@@ -60,34 +61,32 @@ export const PricingMatrixSection = () => {
       <StaggerContainer className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {plans.map((plan, idx) => (
           <StaggerItem key={idx}>
-            <div
-              className={`relative rounded-2xl p-8 bg-zinc-900/90 border flex flex-col justify-between space-y-6 transition-all duration-500 hover:border-yellow-500/50 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-yellow-500/10 ${
-                plan.popular
-                  ? "border-yellow-500 shadow-2xl shadow-yellow-500/10 md:-translate-y-1"
-                  : "border-zinc-800"
+            <CardSpotlight
+              className={`h-full flex flex-col justify-between space-y-6 ${
+                plan.popular ? "border-yellow-500/80 shadow-2xl shadow-yellow-500/10 md:-translate-y-1" : ""
               }`}
             >
-            {plan.popular && (
-              <>
-                <BorderBeam size={300} duration={12} colorFrom="#EAB308" colorTo="#FACC15" />
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-yellow-500 text-black text-xs font-black uppercase tracking-wider shadow-lg flex items-center space-x-1">
-                  <Flame className="w-3.5 h-3.5 fill-black" />
-                  <span>{plan.badge}</span>
-                </div>
-              </>
-            )}
+              {plan.popular && (
+                <>
+                  <BorderBeam size={300} duration={12} colorFrom="#EAB308" colorTo="#FACC15" />
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-yellow-500 text-black text-xs font-black uppercase tracking-wider shadow-lg flex items-center space-x-1 z-20">
+                    <Flame className="w-3.5 h-3.5 fill-black" />
+                    <span>{plan.badge}</span>
+                  </div>
+                </>
+              )}
 
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <h3 className="font-extrabold text-2xl uppercase text-white">
-                  {plan.name}
-                </h3>
-                {!plan.popular && (
-                  <span className="text-xs font-bold uppercase tracking-wider text-zinc-400 bg-zinc-800 px-3 py-1 rounded-full border border-zinc-700">
-                    {plan.badge}
-                  </span>
-                )}
-              </div>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-extrabold text-2xl uppercase text-white">
+                    {plan.name}
+                  </h3>
+                  {!plan.popular && (
+                    <span className="text-xs font-bold uppercase tracking-wider text-zinc-400 bg-zinc-800/80 px-3 py-1 rounded-full border border-zinc-700">
+                      {plan.badge}
+                    </span>
+                  )}
+                </div>
 
               <div className="flex items-baseline space-x-2">
                 <span className="text-4xl sm:text-5xl font-black text-white">
@@ -128,7 +127,7 @@ export const PricingMatrixSection = () => {
                 )}
               </Link>
             </div>
-          </div>
+          </CardSpotlight>
         </StaggerItem>
         ))}
       </StaggerContainer>
