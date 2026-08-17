@@ -38,9 +38,9 @@ export default function ContactPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <a
               href={`tel:${siteConfig.phoneRaw}`}
-              className="flex items-center space-x-2 px-8 py-3.5 rounded-full border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-white font-extrabold uppercase tracking-wider text-sm transition-all"
+              className="inline-flex items-center justify-center space-x-2.5 min-h-[52px] px-8 py-4 rounded-full border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 hover:border-yellow-500/40 text-white font-extrabold uppercase tracking-wider text-sm transition-all duration-200 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
             >
-              <Phone className="w-4 h-4 text-yellow-400" />
+              <Phone className="w-4 h-4 text-yellow-400 shrink-0" />
               <span>Call Now: {siteConfig.phone}</span>
             </a>
           </div>

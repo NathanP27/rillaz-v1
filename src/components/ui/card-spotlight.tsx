@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { cn } from "@/lib/utils";
 
 interface CardSpotlightProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -17,20 +17,30 @@ export function CardSpotlight({
 }: CardSpotlightProps) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
+  const rafRef = useRef<number>(0);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    cancelAnimationFrame(rafRef.current);
+    // Capture values synchronously before the rAF callback fires
+    const clientX = e.clientX;
+    const clientY = e.clientY;
     const rect = e.currentTarget.getBoundingClientRect();
-    setPosition({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
+    rafRef.current = requestAnimationFrame(() => {
+      setPosition({
+        x: clientX - rect.left,
+        y: clientY - rect.top,
+      });
     });
-  };
+  }, []);
 
   return (
     <div
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseLeave={() => {
+        cancelAnimationFrame(rafRef.current);
+        setIsHovered(false);
+      }}
       className={cn(
         "relative rounded-2xl p-6 sm:p-8 bg-zinc-900/80 border border-zinc-800/90 overflow-hidden backdrop-blur-md transition-all duration-300 hover:border-yellow-500/40 hover:shadow-2xl hover:shadow-yellow-500/10 group",
         className

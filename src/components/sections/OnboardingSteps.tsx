@@ -26,7 +26,7 @@ const steps = [
 
 export const OnboardingSteps = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-900 border-b border-zinc-800 relative">
+    <section className="below-fold py-20 px-4 sm:px-6 lg:px-8 bg-zinc-900 border-b border-zinc-800 relative">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal className="text-center space-y-3 mb-14">
           <h2 className="text-fluid-meta text-yellow-400">

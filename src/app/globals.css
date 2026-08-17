@@ -9,6 +9,11 @@
   --gym-slate: #16181d;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  /* Semantic text color tokens */
+  --text-primary: #f8fafc;    /* zinc-50 — headings, high-emphasis */
+  --text-secondary: #e4e4e7;  /* zinc-200 — body copy on dark bg */
+  --text-muted: #a1a1aa;      /* zinc-400 — supporting / metadata */
+  --text-accent: #eab308;     /* yellow-500 — brand accent */
 }
 
 @theme inline {
@@ -85,8 +90,8 @@ body {
   backface-visibility: hidden;
 }
 
-/* Deferred Content Rendering for 60-120fps Smooth Scrolling */
-section {
+/* Deferred Content Rendering — applied only to below-fold sections to avoid CLS on hero */
+.below-fold {
   content-visibility: auto;
   contain-intrinsic-size: 1px 800px;
 }
@@ -163,5 +168,29 @@ section {
   }
   .hover-scale:hover {
     transform: translateY(-2px);
+  }
+}
+
+/* Reduced-motion accessibility override — WCAG 2.2.2 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Kill specific decorative animations */
+  .animate-pulse,
+  .animate-bounce,
+  .animate-marquee,
+  .animate-marquee-vertical,
+  .animate-shimmer-spin,
+  .animate-fade-in,
+  .animate-fade-up {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

@@ -37,7 +37,7 @@ const reviews = [
 
 export const ReviewsMarqueeSection = () => {
   return (
-    <section className="py-20 bg-zinc-950 border-b border-zinc-800 overflow-hidden">
+    <section className="below-fold py-20 bg-zinc-950 border-b border-zinc-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
         <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-yellow-400 mb-2">
           WORD ON THE STREET

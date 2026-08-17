@@ -54,6 +54,7 @@ export const MapModuleSection = () => {
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              sandbox="allow-scripts allow-same-origin allow-popups"
               className="filter grayscale contrast-125 invert-[0.9] opacity-80 hover:opacity-100 transition-opacity duration-300"
             />
 

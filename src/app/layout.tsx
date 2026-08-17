@@ -64,10 +64,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/images/gallery/LOGO.jpg", type: "image/jpeg" },
-      { url: "/favicon.ico" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
     ],
-    apple: [{ url: "/images/gallery/LOGO.jpg", type: "image/jpeg" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
   },
   manifest: "/site.webmanifest",
   other: {
@@ -90,8 +90,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950 text-white min-h-screen flex flex-col`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-yellow-400 focus:text-black focus:font-bold focus:text-sm focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
         <Navbar />
-        <main className="flex-1">
+        <main id="main-content" className="flex-1">
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />

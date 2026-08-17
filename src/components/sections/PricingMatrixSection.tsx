@@ -45,7 +45,7 @@ export const PricingMatrixSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
+    <section className="below-fold py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-zinc-800">
       <ScrollReveal className="max-w-7xl mx-auto text-center space-y-4 mb-14">
         <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-yellow-400">
           MEMBERSHIPS & RATES
@@ -120,7 +120,7 @@ export const PricingMatrixSection = () => {
                 ) : (
                   <button
                     type="button"
-                    className="w-full py-3.5 min-h-[48px] rounded-full border border-zinc-700 bg-zinc-800 hover:bg-zinc-700 active:scale-[0.98] text-white font-extrabold uppercase tracking-wider text-sm transition-all duration-200"
+                    className="w-full py-3.5 min-h-[48px] rounded-full border border-zinc-700 bg-zinc-800 hover:bg-zinc-700 active:scale-[0.98] text-white font-extrabold uppercase tracking-wider text-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
                   >
                     {plan.ctaText}
                   </button>
@@ -146,7 +146,7 @@ export const PricingMatrixSection = () => {
               ))}
             </div>
             <p className="text-xs text-zinc-300 italic">{badge.text}</p>
-            <p className="text-[11px] font-bold text-yellow-400 uppercase">{badge.author}</p>
+            <p className="text-xs font-bold text-yellow-400 uppercase">{badge.author}</p>
           </div>
         ))}
       </ScrollReveal>

@@ -53,10 +53,11 @@ export const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`relative px-3.5 py-2 rounded-lg text-xs lg:text-sm font-extrabold uppercase tracking-wider transition-all duration-200 ${
+                aria-current={isActive ? "page" : undefined}
+                className={`relative px-3.5 py-2 rounded-lg text-xs lg:text-sm uppercase tracking-wider transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 ${
                   isActive
-                    ? "text-yellow-400 bg-yellow-500/10 border border-yellow-500/20"
-                    : "text-zinc-400 hover:text-white hover:bg-zinc-900/80"
+                    ? "font-black text-yellow-400 bg-yellow-500/10 border border-yellow-500/20 after:absolute after:bottom-0 after:left-2 after:right-2 after:h-0.5 after:rounded-full after:bg-yellow-400"
+                    : "font-extrabold text-zinc-400 hover:text-white hover:bg-zinc-900/80"
                 }`}
               >
                 {item.name}
@@ -105,10 +106,11 @@ export const Navbar = () => {
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-3.5 min-h-[48px] rounded-xl text-base font-black uppercase tracking-wider transition-all duration-200 flex items-center ${
+                aria-current={isActive ? "page" : undefined}
+                className={`block px-4 py-3.5 min-h-[48px] rounded-xl text-base uppercase tracking-wider transition-all duration-200 flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-inset ${
                   isActive
-                    ? "text-yellow-400 bg-yellow-500/10 border border-yellow-500/20"
-                    : "text-zinc-300 hover:text-white hover:bg-zinc-900/80"
+                    ? "font-black text-yellow-400 bg-yellow-500/10 border border-yellow-500/20 border-l-2 border-l-yellow-400"
+                    : "font-extrabold text-zinc-300 hover:text-white hover:bg-zinc-900/80"
                 }`}
               >
                 {item.name}

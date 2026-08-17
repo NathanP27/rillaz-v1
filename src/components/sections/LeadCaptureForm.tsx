@@ -63,8 +63,6 @@ export const LeadCaptureForm = () => {
       return;
     }
 
-    // Optimistic UI state update (< 50ms response)
-    setSubmitted(true);
     setLoading(true);
 
     try {
@@ -85,13 +83,12 @@ export const LeadCaptureForm = () => {
       const result = await res.json();
 
       if (!res.ok) {
-        setSubmitted(false);
         throw new Error(result.error || "Failed to submit request. Please try again.");
       }
 
       localStorage.setItem("gymrillaz_pass_sub_time", Date.now().toString());
+      setSubmitted(true);
     } catch (err: any) {
-      setSubmitted(false);
       setErrorMsg(err.message || "An unexpected error occurred.");
     } finally {
       setLoading(false);
@@ -155,11 +152,19 @@ export const LeadCaptureForm = () => {
 
           {/* Field 1: Full Name */}
           <div>
-            <label className="block text-xs font-extrabold uppercase tracking-wider text-zinc-400 mb-1.5 flex items-center justify-between">
-              <span>Full Name *</span>
-              {isNameValid && <Check className="w-3.5 h-3.5 text-green-400" />}
-            </label>
+            <div className="flex items-center justify-between mb-1.5">
+              <label
+                htmlFor="field-name"
+                className="block text-xs font-extrabold uppercase tracking-wider text-zinc-400"
+              >
+                Full Name *
+              </label>
+              {isNameValid && (
+                <Check className="w-3.5 h-3.5 text-green-400" aria-hidden="true" />
+              )}
+            </div>
             <input
+              id="field-name"
               type="text"
               name="name"
               required
@@ -168,17 +173,25 @@ export const LeadCaptureForm = () => {
               placeholder="e.g. Juan Dela Cruz"
               className={`w-full min-h-[48px] px-4 py-3 rounded-xl bg-zinc-950 border ${
                 isNameValid ? "border-green-500/40" : "border-zinc-800"
-              } text-white placeholder-zinc-600 focus:outline-none focus:border-yellow-400 transition-colors text-sm`}
+              } text-white placeholder-zinc-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 focus:border-yellow-400 transition-colors text-sm`}
             />
           </div>
 
-          {/* Field 2: Mobile / WhatsApp Number */}
+          {/* Field 2: Mobile Number */}
           <div>
-            <label className="block text-xs font-extrabold uppercase tracking-wider text-zinc-400 mb-1.5 flex items-center justify-between">
-              <span>Mobile Phone Number *</span>
-              {isPhoneValid && <Check className="w-3.5 h-3.5 text-green-400" />}
-            </label>
+            <div className="flex items-center justify-between mb-1.5">
+              <label
+                htmlFor="field-phone"
+                className="block text-xs font-extrabold uppercase tracking-wider text-zinc-400"
+              >
+                Mobile Phone Number *
+              </label>
+              {isPhoneValid && (
+                <Check className="w-3.5 h-3.5 text-green-400" aria-hidden="true" />
+              )}
+            </div>
             <input
+              id="field-phone"
               type="tel"
               name="phone"
               required
@@ -187,20 +200,24 @@ export const LeadCaptureForm = () => {
               placeholder="0917 123 4567"
               className={`w-full min-h-[48px] px-4 py-3 rounded-xl bg-zinc-950 border ${
                 isPhoneValid ? "border-green-500/40" : "border-zinc-800"
-              } text-white placeholder-zinc-600 focus:outline-none focus:border-yellow-400 transition-colors text-sm`}
+              } text-white placeholder-zinc-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 focus:border-yellow-400 transition-colors text-sm`}
             />
           </div>
 
           {/* Field 3: Goal / Experience Level */}
           <div>
-            <label className="block text-xs font-extrabold uppercase tracking-wider text-zinc-400 mb-1.5">
+            <label
+              htmlFor="field-goal"
+              className="block text-xs font-extrabold uppercase tracking-wider text-zinc-400 mb-1.5"
+            >
               Fitness Goal / Experience Level
             </label>
             <select
+              id="field-goal"
               name="goal"
               value={formData.goal}
               onChange={handleChange}
-              className="w-full min-h-[48px] px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-white focus:outline-none focus:border-yellow-400 transition-colors text-sm cursor-pointer"
+              className="w-full min-h-[48px] px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 focus:border-yellow-400 transition-colors text-sm cursor-pointer"
             >
               <option value="Beginner / General Fitness">Beginner / General Fitness</option>
               <option value="Hypertrophy / Bodybuilding">Hypertrophy / Bodybuilding</option>

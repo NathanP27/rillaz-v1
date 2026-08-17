@@ -48,8 +48,8 @@ export const siteConfig: SiteConfig = {
     display: "8:00 AM – 9:00 PM Daily",
   },
   socials: {
-    facebook: "https://facebook.com",
-    instagram: "https://instagram.com",
+    facebook: "https://www.facebook.com/gymrillaz",
+    instagram: "https://www.instagram.com/gymrillaz",
   },
 };
 
